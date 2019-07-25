@@ -1,0 +1,161 @@
+\chapter{Technical Background/Technology Assessment}
+
+This section focuses on the technical background for I/O positioning systems. Methods and technologies for outdoor and indoor positioning as well as applicable datamodels and I/O transition strategies are presented and evaluated afterwards. The aim of this section is to work out advantages, disadvantages and theoretical foundations of single solutions in order to have a knowledge basis for the implementation of a I/O navigation prototype.
+
+\subsection{Outdoor Positioning}
+In this section, various outdoor positioning technologies (GNSS,WiMAX, GSM) are presented and then analyzed wrt. their applicability and accuracy.
+
+\subsubsection{\ac{gnss}}
+% 0) quick Overview
+% 1) Geschichte und Verbreitung
+% 2) Anwendungen - wer nutzt es? 
+% 3) Generelle Funktionsweise
+% 4) Besondere Eigenschaften - Vor und Nachteile
+%--------------------------------
+
+% 0) quick Overview
+Global Navigation Satellite Systems provide positioning functionalities with global range for navigation, emergency rescue and other applications of public and military use to land, air and water.
+
+% 1) Geschichte und Verbreitung
+%-------------------------------
+As already briefly outlined in Section 1, the only fully operational and most popular \ac{gnss} is NAVSTAR (Navigational Satellite Timing and Ranging) \ac{gps}. It was developed by the U.S. DoD since 1973 until being fully operational in 1995. 
+Besides GPS, there are various other \ac{gnss} approaches, such as China's Beidou (Kompass), India's IRNSS (Indian Regional Navigation Satellite System) Russia's Glonass and E.U.'s Galileo. \cite{heiseOnlineGPS}
+
+
+% 2) Anwendungen - wer nutzt es? 
+%--------------------------------
+GPS is applied in social, economic and scientific areas. Typical applications range "from spacecraft navigation and geodesy, to land surveying and mapping, to precise agriculture and vehicle fleet management, to emergency services and professional navigation, to mass market applications such as in mobile devices (cars and smartphones) and location based services (LBS)."\cite{liRizos}
+
+%Galileo(neuere, hochpräzise atomuhren und schnellere übertragungstechnologien als GPS- welche? stärkeres signal und 3 frequenzbänder)
+%Rettungssyteme: rettungsignale empfangen und weiterleiten
+%Galileo 2020 fully operationable 27 satellites 3 ersatz in 23.222 km mit 3.6km/s, 17 umläufe in 10 tagen danach wiederholung der umkreise
+%2011 2 prototypsatelliten , dann 2 weitere im okt 2012 und steuerung am boden (IOV) (astrium gmbh) 
+%kosten 7-10mrd euro. 
+
+
+% 3) Generelle Funktionsweise
+%-----------------------------
+%Doppler Effekt: zeitliche Dehnung eines Signals entsprechend der Geschwindigkeit.
+The common concept of all GNSSs are interconnected, clock-synchronized satellites and ground stations such that trilateration (\ac{toa}) with a radio signals (GPS L1 signals: 1575,42 MHz) and calculations respecting the doppler effect are applicable. By that, an accuracy of 2-500m can be achieved.
+
+%GPS Almanach: umlaufbahnen, sat status, uhrabweichungen, atmosphärische daten. 1 woche gültig-> muss runtergeladen werden (bis zu 12min über satellite, übers gsm(A-GPS) deutlich schneller)
+General information about exact satellite orbits, statuses, clock deviations and atmospheric data is summarized under the GPS Almanach. Clients with corresponding GPS receiver can download this Almanach and start positioning. The Almanach is mostly receiced over the GSM network, as downloads directly from the satellite might take several minutes and is thus not applicable.
+
+Whereby other trilateration methods calculate positions using distances to three base stations, GPS uses the Time-of-Arrival method which requires clock synchronization in all entities and thus four satellites: As the clocks on receivers like smartphones might differ form those on satellites, a fourth satellite is required to deal with that synchronization task. \cite[p. 58]{hybridizationGNSSPhd}
+
+%wenn satelliten nahe beieinander liegen: schnittfläche groß, unpräziser.
+%Dilution of precision: Geometric, horizontal, vertical, position(3d), time DOP
+The geomatric position of used satellites is also an important factor: if satellites rely closed to each other, the intersection line is larger and positioning more imprecise (see ToA method section). Thus, in order to inform about such positioning deteriorations, every GPS signal carries the so-called dilutions of precision (DOP) which is calculated wrt. geometric, horizontal and vertical orientation. Values ranging from 1 to 6 indicate good precision, signals with DOP higher than 10 are basically not evaluable.
+
+%Ablauf: Funksignal mit Uhrzeit und individualler code (satellitspezifisch)vom Satellit gesendet. GALILEO: 4 atomuhren (passiver wasserstoff-maser(1s/3mio jahre zeitabweichung) und ersatzweise rubidium-atomuhr(1s/760.000 Jahre) pro satellit, die permanent von der erde aus aktualisiert werden)
+%299.000.000 m/s % Wattzahl wichtig?
+Every satellite emitts a radio signal including timestamp and individual code, which can then be received by e.g. smartphones or car navigation systems. All positioning calculations are thus performed on client-side.
+In order to be synchronized and precise, satellites are mostly equipped with multiple, frequently updated atomic clocks, such as Galileo satellites with two passive hydrogen maser clocks (deviation of 1s/3 mio years) and, alternatively, two rubidium atomic clocks (1s/760.000 years). 
+%TODO: SNR und accuracy parameters
+
+% 4) Besondere Eigenschaften - Vor und Nachteile
+%-------------------------------------------------
+% TODO: was macht eine minimale abweichung aus ?
+% v=s/t | *sec -> s=v*t -> x = 300km/s * 0,00001s
+
+
+%Störanfälle: zeit oben vergheht schneller als unten, Handy als empfänger, atmosphärische ablenkung/winkeländerung der Ionosphäre (lösung: 2 versch. frequenzempfänger oder nutzung von korrekturwerten , die am boden ermittelt und zum satelliten gesendet werden, so brauchen handys keinen teuren 2. empfänger), signalreflektion, (ungeplante)standortänderung  der vorausberechneten bahn von satelitten, 
+Accuracy and functioning of GNSSs has also its limits and is susceptible to faults. Occuring issues are clock deviations, cheap (inaccurate) GNSS receivers on smartphones or navigation systems, ionospheric disturbances leading to angle change of signals, change of satellite constellation (less/other satellites available), signal reflection and multipath issues.
+
+A Satellite-based augmentation systems (SBAS), such as the European Geostationary Nevigation Overlay Service (EGNOS) can be used to improve accuracy: reference stations deployed across the area of interest report all measured GNSS errors to base stations, where errors are collected, processed and send to geostationary satellites. The satellites then broadcast the augmentation information as overlay to the origninal GNSS message. \cite{egnos}
+%TODO: GPS pic finden.. minor importancy
+%- Dämpfung:\\
+%Wohnhäuser: 5 bis 15 dB
+%- Historische Gebäude: 25 bis 35 dB
+%- Bürogebäude: 30 dB
+%- Tiefgaragen: > 30 dB
+% aus: Eissfeller/Teuber/Zucker, Indoor-GPS: Ist der Satellitenempfang in Gebäuden möglich?
+Inside and around buildings GNSS signals are not or rarely available.
+\cite{gpsIndoorsMoeglich} state that in houses there is an attenuation of 5-15dB (4-20 fold), in offices around 30dB (1000 fold) and in underground parking over 30dB.
+They conclude that signal acquisition through concrete walls with 25dB attenuation and more is not possible without further assistence.
+
+% Galileo Videos: https://www.youtube.com/watch?v=SkbP5nQnRZc und 
+% Satellitennavigation: https://www.youtube.com/watch?v=lPkETIy0P9E
+
+\subsubsection{WiMAX}
+This technology is part of the IEEE 802.16 protocol family and like WLAN (IEEE 802.15) a radio technology. Unlike WLAN, WiMAX (Worldwide Interoperability for Microwave Access) can operate "at higher speeds, over greater distances and for a greater number of users." \cite{wimax} In particular, this technology works with partially interconnected base stations which are connected to the internet via high bandwidth, wired connection and are accessible by receivers in an area of around 8.000 square km.
+
+
+\subsubsection{Cellular Networks/GSM}
+
+\subsection{Indoor Positioning}
+
+This subsection presents various indoor positioning technologies and methods.
+Whereas outdoor positioning typically relies on trilateration, indoor environments offer lots of alternatives.
+
+\subsubsection{Methods: DR, Fingerprinting, MM, AoA, ToA, TDoA, RToF, Filters}
+\begin{itemize}
+	\item Proximity Detection
+	
+	\item Dead-Reckoning
+	
+	\item Time-based methods: ToA, TDoA, RToF
+	
+	\item Angle of Arrival
+	
+	\item Fingerprinting
+	
+	\item Particle and Kalman Filters
+	
+\end{itemize}
+
+\subsubsection{Technologies: WLAN, BT, RFID, Ultrasound, FM}
+\begin{itemize}
+	\item WLAN
+	
+	\item Bluetooth
+	
+	\item RFID
+	
+	\item Ultrasound
+	
+	\item Frequency Modulation
+	
+\end{itemize}
+
+\subsubsection{Datamodels for Indoor Localization}
+
+\begin{itemize}
+	\item Set-based 
+	
+	\item Hierarchical 
+	
+	\item Graph-based 
+	
+	\item Combined
+	
+\end{itemize}
+
+\subsection{Indoor-/Outdoor Transition Solutions}
+\begin{itemize}
+	\item Use GPS or WLAN until signal loss
+	
+	\item prefer WLAN over GPS
+	
+	\item prefer GPS until signal loss (of 5s)
+	
+	\item vision/ user interaction-based approaches
+	
+	\item use SNR and GPS accuracy, dependent on going indoors or outdoors
+	
+\end{itemize}
+
+\subsection{Assessment and Conclusion}
+\begin{itemize}
+	\item Outdoor positioning
+		%Saltelliten, da z.b. sendemasten zu kleine gebiete abdecken können und außerdem in tälern (schattenseite) nicht positionieren
+	A network of satellites is the only way to cover global range, as for example networked base stations would require partially unfeasible installation of transceivers anywhere on Earth (e.g. in oceans, mountains, dells and gorges etc.) to provide equal coverage.
+	
+	
+	\item Indoor positioning
+	
+	\item Datamodel
+	
+	\item Transition solution: combination of interaction and measurement
+	
+\end{itemize}

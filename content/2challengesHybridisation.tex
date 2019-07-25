@@ -1,0 +1,51 @@
+\chapter{Challenges wrt. Hybridization}
+
+% Challenges bei hybrider Lokalisierung	/ Indoor/Outdoor Übergang
+Facing the need for hybridization in seamless I/O navigation systems, system designers have to conceive and construct solutions for multiple challenges. This section gives an overview to the main challenges and possibly occuring problems in this field.
+
+% different technologies
+\begin{enumerate}
+	\item Technology selection:
+
+	First of all, the selection of suitable technologies: 
+	There is a spread of technologies available for indoor and outdoor positioning, such as WiMAX, GPS and CellID (GSM) outdoors and WLAN, Bluetooth, RFID, NFC, Infrared, Ultrasound, ZigBee, ZWave and others indoors. Outdoor positioning technologies typically require clear sky view for optimal positioning, as walls and steal in buildings attenue the signals by the 100-1000 fold.
+	It is thus necessary to evaluate the technologies' advantages and disadvantages wrt. their suitability to the respective requirements.
+	
+	Mostly, a single technology is insufficient for seamless I/O positioning: on the one hand, outdoor technologies are either not available indoors or do not provide satisfactory accuracy. On the other hand, indoor positioning technologies require configuration and/or installation of hardware and are thus only available (and reliable) in presence of sensors.
+	Regarding this fact, various other challenges arise, such as the
+
+	
+	% schalte ich um und wann am besten ?% welchem Signal vertraue ich wann mehr?
+	\item Determinition of handover strategies:
+	%, from a purely technical viewpoint
+	Positioning systems need a strategy to decide which technology to trust more in case both indoor and outdoor positioning signals are available. Multiple variants are conceivable, e.g., one could either consequently only use one of the available technologies, or use mathematical functions like the mean of all received positioning results origining from both indoor and outdoor technology. Also solutions assigning weights to the measurements in different, predefined situations are imaginable, but this would require elaborate pre-configuration for every building (and the area around it).
+	\cite{streamspin} reveals that a strategy where GPS is prefered over WLAN uppon continuous readings (in intervals of five seconds) performs more accurate than use one of both until signal loss.
+		% wlan signal meißt länger erreichbar als sinnvoll es anzuwenden wenn outdoor GPS verfügbar ist und genauerer wäre
+	The main drawback of the 'use GPS or WLAN until signal loss' strategy, for example, is that WLAN signals are typically available outdoors for a long distance but with a remarkable worse accuracy and reliability than GPS would provide.
+	
+	\item A common datamodel:
+		%  . Different levels of granularity and the ability to handle both symbolic indoor coordinates as well geometric GPS coordinates have to be supported.
+	
+	In order to combine GPS with an indoor localization technologies like WLAN, Bluetooth and RFID, a common datamodel has to be implemented which has to include different levels of granularity.
+	It has to support various types of symbolic indoor spaces (coordinates), i.e., the differing between building parts like entrances, floors, corridors, rooms, stairs, elevators and possibly more entities, which all shall be annotatable with semantic information like naming and spatial relations and distances to other entities and other specific attributes. Additionally, the model has to include geometric GPS coordinates, i.e. measurement values indicating latitude, longitude, and altitude of buildings for outdoor positioning.
+
+	\item Method selection:
+	
+	Like for technologies, there is a need for evaluation of localization methods, as they different properties also aim at different areas of application. 
+	According to \cite{recentAdvances}, fundamental aspects in method selection are accuracy, coverage, the requirement for line of sight, the affection by multipath and cost.
+	It can be obeserved that there is a tradeoff between cost and accuracy: the article reveals that methods like \ac{toa} and fingerprinting, for example, provide high accuracy at medium to high costs, whereas dead-reckoning and proximity detection require low costs, but also typically provide low accuracy.
+
+	\item Navigation requirements:
+	
+	For outdoor navigation issues one could easily use the road network detected by GPS, but for indoor approaches relations like spatial containment, distances between entities have to be explicitly modeled. Also the different movement patterns, i.e. walking, taking stairs or the elevator, with their specificly required time shall be considered. For further refinement one could provide semantic information like accessibility, barrier liberty or the room type.
+% Welche Strategie ist sinnvoll ? standalone, on-the-go, cooperative?
+	\item Positioning strategy evaluation:\\
+	The determinition of which positioning strategy to use highly depends on a system's requirements: in case security and privacy is essential, all positioning calculations have to be done on client-side. In contrast, if a real-time monitoring of all entities in a certain area is required, a server-based approach is a better option.
+	Another alternative represent cooperative strategies where positioning is based on other entities' signals (i.e. not only from satellites and APs). The respective advantages and drawbacks are discussed in Section 4.
+\end{enumerate}
+		% Welche Strategie ist sinnvoll ? standalone, on-the-go, cooperative?
+		
+	% annotationen in symbolischen coordinaten notwendig:
+	% Es kann nicht alles in einem geographischem Koordinatensystem berechnet werden, da damit keine Türen, verschlungene Gänge, Treppen, Aufzüge etc berücksichtigt werden und immer nur die direkte Linie betrachtet wird
+	
+% END CHALLENGES

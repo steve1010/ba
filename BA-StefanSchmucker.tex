@@ -1,0 +1,59 @@
+\input{tex/arbeit-vorlage-praeambel.tex} % Importiere die Einstellungen aus der Präambel
+
+
+
+% hier beginnt der eigentliche Inhalt
+\begin{document}
+
+%Titelseite
+%entsprechend Autor, Titel, Matrikelnummer, Email, Abgabetermin, Arbeitsart eintragen
+\author{Stefan Schmucker}
+\title{Design and implementation of indoor-/outdoor transitions in pedestrian navigation systems}
+\newcommand{\matrikel}{1749055}
+\newcommand{\email}{stefan.schmucker@uni-bamberg.de}
+\newcommand{\termin}{30.09.2019}
+\newcommand{\studiengang}{Software Systems Science}
+\newcommand{\arbeitstyp}{Bachelorarbeit}
+\pagenumbering{Roman} % große Römische Seitenummerierung
+\include{tex/titelseite}
+
+
+
+
+\pagestyle{headings} % normale Kopf- und Fußzeilen für den Rest
+%Inhaltsverzeichnis
+\tableofcontents
+%Abkürzungsverzeichniss muss selbst geführt werden
+%Nur tatsächlich verwendete Abkürzungen werden auch aufgeführt 
+\chapter*{Abkürzungsverzeichnis}
+\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis} 
+\include{content/abbreviations}
+\vspace{9cm}
+
+%Abbildungsverzeichnis
+\listoffigures
+%Tabellenverzeichnis
+\listoftables
+
+% Beginn des Inhalts
+\include{content/0abstract}
+\include{content/1intro}
+\include{content/2challengesHybridisation}
+\include{content/3relatedWork}
+\include{content/4background}
+\include{content/5systemDesign}
+\include{content/6evaluation}
+\include{content/7conclusion}
+% ENDE Inhalt
+
+%Anhang
+\include{tex/anhang}
+
+%Literaturverzeichnis
+\bibliography{tex/bibfile}
+%\bibliographystyle{IEEEtran}
+
+%Eigenständigskeitserklärung
+\include{tex/eigenstaendigkeitserklaerung}
+
+\end{document}

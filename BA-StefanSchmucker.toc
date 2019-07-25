@@ -1,0 +1,35 @@
+\select@language {ngerman}
+\select@language {ngerman}
+\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{III}{chapter*.2}
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{V}{chapter*.3}
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{VI}{chapter*.4}
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
+\contentsline {chapter}{\numberline {2}Challenges wrt. Hybridization}{5}{chapter.2}
+\contentsline {chapter}{\numberline {3}Related Work}{8}{chapter.3}
+\contentsline {chapter}{\numberline {4}Technical Background/Technology Assessment}{11}{chapter.4}
+\contentsline {subsection}{\numberline {4.0.1}Outdoor Positioning}{11}{subsection.4.0.1}
+\contentsline {subsubsection}{\numberline {4.0.1.1}\ac {gnss}}{11}{subsubsection.4.0.1.1}
+\contentsline {subsubsection}{\numberline {4.0.1.2}WiMAX}{13}{subsubsection.4.0.1.2}
+\contentsline {subsubsection}{\numberline {4.0.1.3}Cellular Networks/GSM}{13}{subsubsection.4.0.1.3}
+\contentsline {subsection}{\numberline {4.0.2}Indoor Positioning}{13}{subsection.4.0.2}
+\contentsline {subsubsection}{\numberline {4.0.2.1}Methods: DR, Fingerprinting, MM, AoA, ToA, TDoA, RToF, Filters}{13}{subsubsection.4.0.2.1}
+\contentsline {subsubsection}{\numberline {4.0.2.2}Technologies: WLAN, BT, RFID, Ultrasound, FM}{14}{subsubsection.4.0.2.2}
+\contentsline {subsubsection}{\numberline {4.0.2.3}Datamodels for Indoor Localization}{14}{subsubsection.4.0.2.3}
+\contentsline {subsection}{\numberline {4.0.3}Indoor-/Outdoor Transition Solutions}{14}{subsection.4.0.3}
+\contentsline {subsection}{\numberline {4.0.4}Assessment and Conclusion}{15}{subsection.4.0.4}
+\contentsline {chapter}{\numberline {5}System Design und Implementation}{16}{chapter.5}
+\contentsline {subsection}{\numberline {5.0.1}Objective and Requirements}{16}{subsection.5.0.1}
+\contentsline {subsection}{\numberline {5.0.2}System Design Decisions}{16}{subsection.5.0.2}
+\contentsline {subsubsection}{\numberline {5.0.2.1}Technologies and Methods}{16}{subsubsection.5.0.2.1}
+\contentsline {subsubsection}{\numberline {5.0.2.2}Datamodel}{16}{subsubsection.5.0.2.2}
+\contentsline {subsubsection}{\numberline {5.0.2.3}IO and OI Transition}{16}{subsubsection.5.0.2.3}
+\contentsline {subsubsection}{\numberline {5.0.2.4}Software}{16}{subsubsection.5.0.2.4}
+\contentsline {subsection}{\numberline {5.0.3}Implementation}{16}{subsection.5.0.3}
+\contentsline {subsubsection}{\numberline {5.0.3.1}Programm Logic}{16}{subsubsection.5.0.3.1}
+\contentsline {subsubsection}{\numberline {5.0.3.2}Appearance}{16}{subsubsection.5.0.3.2}
+\contentsline {chapter}{\numberline {6}Evaluation}{17}{chapter.6}
+\contentsline {subsection}{\numberline {6.0.1}Positioning and Navigation Results}{17}{subsection.6.0.1}
+\contentsline {subsection}{\numberline {6.0.2}Maybe: Users Experience}{17}{subsection.6.0.2}
+\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{18}{chapter.7}
+\contentsline {chapter}{Anhang}{19}{chapter*.11}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{20}{chapter*.12}

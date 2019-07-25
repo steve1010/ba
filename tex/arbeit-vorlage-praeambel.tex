@@ -1,0 +1,143 @@
+\documentclass[fontsize=12pt, paper=a4, headinclude, twoside=false, parskip=half+, pagesize=auto, numbers=noenddot, plainheadsepline, open=right, toc=listof, toc=bibliography]{scrreprt}
+% PDF-Kompression
+\pdfminorversion=5
+\pdfobjcompresslevel=1
+% Allgemeines
+\usepackage[automark,footsepline,plainfootsepline,headsepline]{scrpage2} % Kopf- und Fußzeilen
+\usepackage{amsmath,marvosym} % Mathesachen
+\usepackage{mathtools} % Mathesachen 
+\usepackage{amstext}
+\usepackage[T1]{fontenc} % Ligaturen, richtige Umlaute im PDF
+\usepackage[utf8]{inputenc}% UTF8-Kodierung für Umlaute usw
+% Schriften
+\usepackage[printonlyused]{acronym} %Notwendig für Abkürzungsverzeichnis
+\usepackage{mathpazo} % Palatino für Mathemodus
+\usepackage{setspace} % Zeilenabstand
+\onehalfspacing % 1,5 Zeilen
+% Schriften-Größen
+\setkomafont{chapter}{\Large\rmfamily} % Überschrift der Ebene
+\renewcommand*{\chapterheadstartvskip}{\vspace*{-20mm}}
+\setkomafont{section}{\large\rmfamily}
+\setkomafont{subsection}{\normalsize\rmfamily}
+\setkomafont{subsubsection}{\normalsize\rmfamily}
+\setkomafont{paragraph}{\normalsize\rmfamily}
+\setkomafont{subparagraph}{\normalsize\rmfamily}
+\setkomafont{chapterentry}{\normalsize\rmfamily} % Überschrift der Ebene in Inhaltsverzeichnis
+\setkomafont{descriptionlabel}{\bfseries\rmfamily} % für description Umgebungen
+\setkomafont{captionlabel}{\small\bfseries}
+\setkomafont{caption}{\small}
+% Sprache: Deutsch
+\usepackage[ngerman]{babel} % Silbentrennung
+% PDF
+\usepackage[ngerman,pdfauthor={Markus Kättner},  pdfauthor={Markus Kättner}, pdftitle={Abschlussarbeit}, breaklinks=true,baseurl={}]{hyperref}
+\usepackage[final]{microtype} % mikrotypographische Optimierungen
+\usepackage{url}
+\usepackage{pdflscape} % einzelne Seiten drehen können
+% Tabellen
+\usepackage{multirow} % Tabellen-Zellen über mehrere Zeilen
+\usepackage{multicol} % mehre Spalten auf eine Seite
+\usepackage{tabularx} % Für Tabellen mit vorgegeben Größen
+\usepackage{longtable} % Tabellen über mehrere Seiten
+\usepackage{booktabs} % schoenere Tabellen + abstaende
+\usepackage{array}
+%  Bibliographie
+\usepackage{bibgerm} % Umlaute in BibTeX
+% Tabellen
+\usepackage{multirow} % Tabellen-Zellen über mehrere Zeilen
+\usepackage{multicol} % mehre Spalten auf eine Seite
+\usepackage{tabularx} % Für Tabellen mit vorgegeben Größen
+\usepackage{array}
+\usepackage{float}
+\usepackage{titling}
+\usepackage{enumitem} 
+% Bilder
+\usepackage{graphicx} % Bilder
+\usepackage{color} % Farben
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg} % bevorzuge pdf-Dateien
+\usepackage{subfig}
+\usepackage[subfigure, titles]{tocloft}
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftchapdotsep}}
+\newcommand{\subfigureautorefname}{\figurename} % um \autoref auch für subfigures benutzen
+\usepackage[all]{hypcap} % Beim Klicken auf Links zum Bild und nicht zu Caption gehen
+% Bildunterschrift
+\setcapindent{0em} % kein Einrücken der Caption von Figures und Tabellen
+\setcapwidth[c]{0.9\textwidth}
+\setlength{\abovecaptionskip}{0.2cm} % Abstand der zwischen Bild- und Bildunterschrift
+% Quellcode
+\usepackage{listings} % für Formatierung in Quelltexten
+\definecolor{grau}{gray}{0.25}
+\lstset{
+	extendedchars=true,
+	basicstyle=\tiny\ttfamily,
+	%basicstyle=\footnotesize\ttfamily,
+	tabsize=2,
+	keywordstyle=\textbf,
+	commentstyle=\color{grau},
+	stringstyle=\textit,
+	numbers=left,
+	numberstyle=\tiny,
+	% für schönen Zeilenumbruch
+	breakautoindent  = true,
+	breakindent      = 2em,
+	breaklines       = true,
+	postbreak        = ,
+	prebreak         = \raisebox{-.8ex}[0ex][0ex]{\Righttorque},
+}
+% linksbündige Fußboten
+\deffootnote{1.5em}{1em}{\makebox[1.5em][l]{\thefootnotemark}}
+
+\typearea{14} % typearea berechnet einen sinnvollen Satzspiegel (das heißt die Seitenränder) siehe auch http://www.ctan.org/pkg/typearea. Diese Berechnung befindet sich am Schluss, damit die Einstellungen oben berücksichtigt werden
+
+%Überschriftennummerierung
+\setcounter{secnumdepth}{4}
+%Tiefe des Inhaltsverzeichnisses
+
+
+\hypersetup{% 
+  pdfborder= 0 0 0 
+}
+
+%lstset Formatierungen
+\lstset{
+  basicstyle=\fontsize{11}{13}\selectfont\ttfamily
+}
+
+%Formatierung von Abbildungs und Tabellenverzeichnis/caption
+\renewcommand{\cftfigpresnum}{Abb. }
+\renewcommand{\cfttabpresnum}{Tab. }
+
+\renewcommand{\cftfigaftersnum}{:}
+\renewcommand{\cfttabaftersnum}{:}
+
+\setlength{\cftfignumwidth}{2cm}
+\setlength{\cfttabnumwidth}{2cm}
+
+\setlength{\cftfigindent}{0cm}
+\setlength{\cfttabindent}{0cm}
+
+\renewcaptionname{ngerman}{\figurename}{Abb.}
+\renewcommand{\tablename}{Tab.}
+
+%Natbib zum zitieren im Stil (Autor Jahr, Seite)
+\usepackage{natbib}
+\bibliographystyle{dcugerman}%GEÄNDERT:: alter wert: dcugerman
+\usepackage{har2nat}
+\providecommand\harvardand{}
+\renewcommand{\harvardand}{und} 
+\setcitestyle{aysep={},yysep={;}}
+
+%Befehle für Multizitate
+\newcommand{\doublecite}[2]{(#1; #2)}
+\newcommand{\tripplecite}[3]{(#1; #2; #3)}
+\newcommand{\quadrocite}[4]{(#1; #2; #3; #4)}
+\newcommand{\quintcite}[5]{(#1; #2; #3; #4; #5)}
+
+% fortlaufende nummerierung der footnotes
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+
+% einruecken des textes pro abschnitt
+%\usepackage{parskip}
+%\setlength{\parindent}{4mm}

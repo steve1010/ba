@@ -1,0 +1,2 @@
+4) Fingerprinting Positioning Techniques : M. Brunato and K. Csaba, ”Transparent location fingerprinting for wireless services”, Proc. Med-Hoc-Net, 2002.
+4) How WiMAX works: https://computer.howstuffworks.com/wimax1.htm
