@@ -4,8 +4,7 @@ This section focuses on the technical background and theoretical foundations for
 This prototype shall be able to navigate users at an an address arbitrary location outdoors to a predefined location indoors, in this case a room at the university campus.
 
 To fulfill this task the system needs several components, such as at least one indoor and one outdoor positioning technology, localization methods, an underlying data model and a transition strategy for positioning technologies.
-Representatives of those components are presented in the following and then evaluated at the end of this chapter wrt. their applicability. As this work focuses on the transition between outdoor and indoor navigation, for the prototype only one indoor and one outdoor technology is used. A combination of several technologies and methods would improve quality of positioning services \cite{challengesLBS}.
-Further system design considerations and decisions are part of the next chapter. 
+Representatives of those components are presented in the following and then evaluated at the end of this chapter wrt. their applicability. A combination of several technologies and methods would improve quality of positioning services \cite{challengesLBS}. Further system design considerations and decisions are part of the next chapter. 
 
 
 \section{Positioning Methods}
@@ -16,18 +15,18 @@ Although GNSSs which uniquely make use of the \ac{toa} method, are the most prom
 There exist several methods for position determination, such as \textit{Proximity Detection}, \textit{Dead-Reckoning}, the time-based methods \textit{\ac{toa}} and \textit{\ac{rtof}}, also refered to as \textit{Trialateration}, \textit{Fingerprinting}, \textit{Map Matching} and \textit{Particle Filters}. 
 Their applicability depends on environmental properties and the required positioning accuracy.
 
-\textit{Hint: The content of the following section \emph{4.1 Positioning Methods} is extracted in reduced form from the author's last paper 'Indoor Localization - A Comparison of Different Methods and Approaches'}
+\textit{Hint: The following content of this section \emph{4.1 Positioning Methods} is extracted from the author's last paper "Indoor Localization - A Comparison of Different Methods and Approaches"}
 
 Like depicted in Figure \ref{img:methodsOverview}, there are three classes of methods: proximity detection, triangulation and scene analysis. 
 
 \image{8cm}{grafiken/semImg/methodsOverview.PNG}{An overview to indoor localization methods \cite{recentAdvances}}{img:methodsOverview}
 
-The later includes image- and video-based positioning, but also fingerprinting techniques that "first collect features (fingerprints) of a scene and then estimate	the location of an object by matching online measurements with the closest a priori location fingerprints." \cite{wirelessILSystemsAndTechniquesSurvey}  Related to scene analysis techniques are map matching and particle filters. Triangulation can either be performed with the angulation or lateration methods.
+The later includes image- and video-based positioning, but also fingerprinting techniques that "first collect features (fingerprints) of a scene and then estimate	the location of an object by matching online measurements with the closest a priori location fingerprints." \cite{wirelessILSystemsAndTechniquesSurvey}  Related to scene analysis techniques are map matching and particel filters. Triangulation can either be performed with the angulation or lateration methods.
 Proximity detection methods estimate a target's current position based on proximity to base stations or on movement patterns like \ac{dr}. 
 
 % maybe split fingerprinting in scene analysis - video based, fingerpriting based ...
 
-\subsection*{Proximity Detection}
+\subsection{Proximity Detection}
 
 The proximity detection method is a very simple localization method where multiple detection sensors (like routers, \ac{ir} or \ac{rfid}) are used to mark proximity areas. 
 
@@ -40,11 +39,11 @@ In case further or even global range is required, the cellular mobile \ac{gsm} n
 
 For both, indoor and outdoor localization, the method's accuracy highly depends on the "density of beacon point deployment and signal range" \cite[p. 3]{wirelessILSystemsAndTechniques}. For improvement of accuracy, which is very limited in general, parameters like signal travel time can be included (see methods RSS, ToA and TDoA).
 
-\subsection*{Triangulation}
+\subsection{Triangulation}
 
-This family of methods is based on calculations on the properties of triangles. For location determination, the known position and distance of three or more base stations is used to locate an object. There are basically two derivations of triangulation, namely lateration, which subsumes time- and distance-based methods, and angulation.
+This family of methods is based on calculations on the properties of triangles. For location determination, the known position and distance of mostly three base stations is used to locate an object. There are basically two derivations of triangulation, namely lateration, which subsumes time- and distance-based methods, and angulation, whereas both are sometimes (erroneously) refered to as triangulation.
 
-There are several varieties of triangulation methods, e.g. angle-based, time-based and signal property-based methods \cite{recentAdvances}. 
+There are several varieties of triangulation methods, e.g. angle-based, time-based and signal property-based methods\cite{recentAdvances}. All methods share the assumption that electromagnetic waves propagate with the same speed as light ($\sim$300.000 km/second).\\
 
 \subsubsection{Angulation - Angle-Based} 
 In the angle, or \ac{aoa}-based localization method, intersections of at least two lines of bearing are computed. Although angulation with two base stations could work in some cases, it is mostly implemented with three base stations to improve accuracy - then also called triangulation. \cite{recentAdvances} reveals that for "finding direction, it requires highly directional antennas or antenna arrays", which forms, despite the fact that they are very costly, a big issue for indoor localization. Interferences origining from entities (people, walls, other signals) in indoor environments distort measurement values and result in erroneous position calculation. In (one of the rare) cases the signals remain uninterferenced, this technique would bring excellent accuracy.
@@ -53,12 +52,12 @@ Figure \ref{img:angleBased} shows basic operations with that method.
 
 \subsubsection{Lateration - Time-Based}
 Lateration methods calculate "a position determined from distance measurements" \cite{recentAdvances}, either relying on abolute or relative travel time. Unlike to angulation, lateration with two base stations does not bring any significance: like depiced in Figure \ref{img:otdoa}, two hyperbolic shapes (here simplified as cycles) always have two intersection points such that an exact position can not be determined. Thus, lateration methods are implemented with three or more base stations, then refered to as trilateration or multilateration. \\
-All methods share the assumption that electromagnetic waves propagate with the same speed as light ($\sim$300.000 km/second).\\
+
 There are four approaches:
 
 \begin{itemize}
 	\item \ac{toa}:\\
-	This method requires all nodes in the network (object under observation and receiving stations) to be highly synchronized at any time. 
+	This method requires all nodes in the network (detected object and receiving stations) to be highly synchronized at any time. 
 	The localization process starts at client side, where a timestamped signal is emitted and received by multiple base stations. The single distances d\textsubscript{i} are computed using absolute travel time t and the assumed propagation speed c: \\		 
 	Assume 
 	\[ t\textsubscript{i} = t\textsubscript{receive\textsubscript{i}} - t\textsubscript{send} \]
@@ -67,7 +66,7 @@ There are four approaches:
 	Observing the equation, it can be seen why precise synchronization is an absolute requirement for this method: due to constant c being that high, even small discrepancies in time can result in a completely different distance.\\
 	Due to time-based signals are not directed in any way, an object must be located anywhere on a circle around the receiver station, with a radius of the computed distance. The intersection of those circles is then the most likeliest position.
 	The TOA method using three base stations is shown in Figure \ref{img:toa}.
-	\image{5cm}{grafiken/semImg/RToFandTOA.PNG}{The RToF/TOA method \cite{recentAdvances}}{img:toa}
+	\image{5cm}{grafiken/semImg/RToFandTOA.PNG}{The RToF/TOA method \cite{recentAdvances}}{img:toa}\\
 	
 	\item \ac{otdoa}:\\
 	This time-based method, also called multilateration, infers positions by using relative arrival times captured by at three time-synchronized base stations with known location. A signal's OTDOA at the base stations can also be converted to a distance: \[ D = OTDOA * c\]
@@ -92,28 +91,29 @@ Besides regarding time as mayor indicator for distance, the received signal stre
 \[intensity \sim \frac{1}{distance^{2}}\]
 Assuming an isotropic source (like APs or routers), the intensity of the emitted signal is inversely proportional to the square of the distance. Figure \ref{img:rssInverseSquare} illustrates this relation: in nearby areas, the intensity (illustrated with red arrows and red dots in the single areas), is significantly bigger than in marginal areas.	
 
-\image{6cm}{grafiken/semImg/rssInverseSquare.PNG}{The inverse square law used in signal property-based methods\cite{imgSrc}}{img:rssInverseSquare}
+\image{8cm}{grafiken/semImg/rssInverseSquare.PNG}{The inverse square law used in signal property-based methods\cite{imgSrc}}{img:rssInverseSquare}
 
 As in other trilateration techniques, the single distances from a mobile client to the base stations form circles around them, whose intersection finally represents the positioning result.
 The signal property-based method with just a single base station is depicted in Figure \ref{img:rssMethod}.
 
-\image{5cm}{grafiken/semImg/rssMethod.PNG}{Signal property-based lateration \cite{recentAdvances}}{img:rssMethod}
+\image{6cm}{grafiken/semImg/rssMethod.PNG}{Signal property-based lateration \cite{recentAdvances}}{img:rssMethod}
 
-%A related but more sophisticated approach is the so-called path loss model which is described by the following equation:
-%\[RSSI = -10nlog_{10}(d)+C\]
-%where "n is the path loss exponent that varies depending on the environment, d is the distance between the	transmitting and receiving devices, and C is a fixed constant that accounts for system losses" \cite{rssiIoT}. Including knowledge about a certain environment leads to a refinement of positioning results and  interference error reduction.
+A related but more sophisticated approach is the so-called path loss model which is described by the following equation:
+\[RSSI = -10nlog_{10}(d)+C\]
+where "n is the path loss exponent that varies depending on the environment, d is the distance between the	transmitting and receiving devices, and C is a fixed constant that accounts for system losses." \cite{rssiIoT} Including knowledge about a certain environment leads to a refinement of positioning results and  interference error reduction.
 
-%An exemplary propagation model of BLE in indoor enviromnents can be seen in Figure \ref{img:rssiProp}.% if space needed: \\ after image declaration.
-%\image{7cm}{grafiken/semImg/rssBLEpropModel.PNG}{Exemplary RSSI propagation model of BLE in indoor environments \cite{rssiIoT}}{img:rssiProp} 
+An exemplary propagation model of BLE in indoor enviromnents can be seen in Figure \ref{img:rssiProp}.% if space needed: \\ after image declaration.
+\image{7cm}{grafiken/semImg/rssBLEpropModel.PNG}{Exemplary RSSI propagation model of BLE in indoor environments \cite{rssiIoT}}{img:rssiProp} 
 %END
-\subsection*{Dead Reckoning (DR)}
+\subsection{Dead Reckoning (DR)}
 
-Another very simple but widely used method is \textit{Dead Reckoning}, where localization is "based on last determined	position and incrementing that position based on known or estimated speeds over elapsed time" \cite{recentAdvances}. The result can thus only result in an estimation of the current position. Furthermore, "inaccuracy of the process is cumulative, so the deviation in the position
-fix grows with time" \cite{recentAdvances}. DR is also implemented in inertial navigation systems and is employed when GPS signal is lost, e.g. in tunnels.
+Another very simple but widely used method is Dead Reckoning, where localization is "based on last determined	position and incrementing that position based on known or estimated speeds over elapsed time" \cite{recentAdvances}, and thus can only result in an estimation of the current position. Furthermore, "inaccuracy of the process is cumulative, so the deviation in the position
+fix grows with time". \cite{recentAdvances} DR is also implemented in ineartial navigation systems and is employed when GPS signal is lost, for example in tunnels.
 
-For indoor purposes, according to \cite{drSystem}, accelerometer sensors in smartphones or attached sensors modules can be utilized to obtain the travelled distance, where distance estimation is then based on steps detected and the direction obtained by the magnetic sensor.
-Besides this orientation projection, the overall localization process includes "filtering, step detection and step length estimation" \cite{drSystem}. As gravity and noise interferences accelerometer measurements, the values are filtered using physical constants and formulas, which will not be explained further here but can be looked up at \cite[p.3]{drSystem}.
-Step detection can either be performed with zero-crossing or peak detection, whereas the later uses local maxima of the curve emerging from accelerometer measurement values. Unfiltered, all maximas were considered as steps, such that thresholds for further filtering are applied: all values under a certain threshold and also those not fitting in a typical time intervals of steps while walking (120ms – 400ms, according to \cite{drSystem}) are rejected.
+For indoor purposes, according to \cite{drSystem}, accelerometer sensors in smartphones or even attached sensors modules can be utilized to obtain the travelled distance, where distance estimation is then based on steps detected and values obtained by the magnetic sensor, i.e., the compass direction.  (also called orientation projection).
+
+Besides orientation projection, the overall localization process includes "filtering, step detection and step length estimation" \cite{drSystem}. As gravity and noise interferences accelerometer measurements, the values are filtered using physical constants and formulas, which will not be explained further here but can be looked up at \cite[p.3]{drSystem}.
+Next in the DR process is step detection, which can either be done with peak- or zero-crossing detection. Peak detection uses local maximas of the curve emerging from accelerometer measurement values. Unfiltered, all maximas were considered as steps, such that thresholds for further filtering are applied: all values under a certain threshold and also those not fitting in a typical time intervals of steps while walking (120ms – 400ms, according to \cite{drSystem}) are rejected.
 
 An exemplary measurement result with three valid steps detected (depicted in blue) and the threshold (in red) is illustrated in Figure \ref{img:drMsmnt}.
 \image{8cm}{grafiken/semImg/drMeasurement.PNG}{An exemplary DR measurement result with three steps detected \cite{drSystem}}{img:drMsmnt}
@@ -123,35 +123,49 @@ Zero-cross detection announces a step whenever the x-axis is crossed within a ty
 Last step in the process is step length estimation. Besides some dynamic methods, which can be looked up in \cite{drSystem}, the static approach uses a person's height and a gender-specific constant: \[stepSize = height * k\] with "k equal to 0.415 for men and 0.413 for women." \cite{drSystem}
 %	\image{5cm}{grafiken/semImg/drProcess.PNG}{The Dead Reckoning processes \cite{drSystem}}{img:dr}
 
-\subsection*{Map Matching}
+\subsection{Map Matching}
 
-The Map Matching method makes use of a building's roadmap and (mostly noisy) localization samples, such that "building information provide a logical threshold to bound the solution into a certain region"\cite{mmSystem}. Thus, a system is able to return valid positions somewhere on the floor plan, even if the real measurement values diverge.
+The Map Matching method makes use of a building's roadmap and (mostly noisy) localization samples, such that "building information provide a logical threshold to bound the solution into a certain region"\cite{mmSystem}. Thus, a system is able to return valid positions somewhere on the floorplan, even if the real measurement values diverge.
 
-As nowadays most big buildings are equiped with many rounters or \ac{ap}s, map matching positioning samples mostly origin from WLAN signal strength values.
+As nowadays most big buildings are equiped with many rounters or \ac{ap}s, map matching positioning samples mostly origin from WLAN.
+
 The required electronic map can either be designed in a floor plan builder or generated automatically using crowd-sourced data samples. 
 
-There is a variety of applicable algorithms and data models such as graph- and link-based or room- and floor 3D-models. In the link-based approach, an ID and respective coordinates are assigned to each room. 
+There is a variety of algorithms and applied datamodels such as graph- and link-based or room- and floor 3D-models. In the link-based approach, an ID and respective coordinates are assigned to each room. 
 Map matching algorithms typically origin from the following types: 
-1) geometrical, where the shortest distance from a measurement point to a trajectory is calculated, 2) topological, where links, i.e. the floors own attributes like "floor number, proximity of a height change access, stairs, and all possible links diverged from its start and destination nodes"\cite{mmSystem}, 3) probabilistic, where a target's direction and speed is considered (i.e. DR) and 4) sophisticated methods using fuzzy logic, belief theory and Bayesian networks. \\
+1) geometrical, where the shortest distance from a mesaurement point to a trajectory is calculated, 2) topological, where links, i.e. the floors own attributes like "floor number, proximity of a height change access, stairs, and all possible links diverged from its start and destination nodes"\cite{mmSystem}, 3) probabilistic, where a target's direction and speed is considered (i.e. DR) and 4) sophisticated methods using fuzzy logic, belief theory and Bayesian networks.
+
+Obviously, combinations of those algorithms improve positioning accuracy, such that they often occur at least pairwise. \cite{mmSystem}, for example, uses a combination of geometrical, topological and probabilistic algorithms to ensure an optimal result. The authors also refined the geometrical algorithm such that the shift between positioning estimate and projection is applied to the next measurement, which leads to a more accurate localization.
+
 Figure \ref{img:mmSolution}	shows a typical map matching navigation result with floorplan in black, measurement values in blue and map matched path in red.
 
 \image{9cm}{grafiken/semImg/mmSolution.PNG}{A typical map matching navigation result \cite{mmSystem}}{img:mmSolution}
 
-\subsection*{Fingerprinting}
+\subsection{Fingerprinting}
 
-Fingerprinting can be seen as an extended version of the RSSI method, where a database and further positioning algorithms are added to improve accuracy. 
+Fingerprinting can be seen as an extended version of the RSS method, where a database and further positioning algorithms are added to improve accuracy. 
 The overall process is splitted into two parts, namely training (calibration, offline) and tracking (localization, online) phase.
-The basic idea in the training phase is to "collect features of the scene (fingerprint) from the surrounding signatures at every location in the areas of interest and then build a fingerprint database" \cite{recentAdvances}. 
+
+The basic idea in the training phase is to "collect features of the scene (fingerprint) from the surrounding signatures at every location in the areas of interest and then build a fingerprint database." \cite{recentAdvances} 
+
 In the tracking phase, a mobile client requests all base stations in its region to reply to its positioning query. The strengths of signals received by the client can then be compared with those in the database, resulting in the closest known position.
 
 % Example with explaination
-A mobile device could for example collect WLAN signal strengths from different \ac{ap}s at every point of interest in a building and safe them together with actual location in a database. During online phase, current RSSI measurements can be mapped to known locations.\linebreak
+For example, a mobile device could collect WLAN signal strengths from different \ac{ap}s at every point of interest in a building, safe them together with actual location in a database. During online phase, current RSS measurements can be mapped to known locations.
+
 The overall process is illustrated in Figure \ref{img:fingerprinting}.
 
 \image{8cm}{grafiken/semImg/fingerprinting.PNG}{The location fingerprinting process \cite{recentAdvances}}{img:fingerprinting}
 
-\subsection*{Particel Filters}
+Multiple algorithms can be chosen to perform the required comparing of live tracks with DB values, such as probabilistic methods and k-nearest-neighbor (kNN) averaging, but also advanced ones like neural networks, support vector machine (SVM), and smallest M-vertex polygon (SMP) like mentioned in \cite[p. 4f]{wirelessILSystemsAndTechniquesSurvey} 
+
+An advantage of this method is its low cost: it does "not require specialized hardware in either the mobile device or the receiving end nor is no time synchronization necessary between the stations." \cite{recentAdvances} On the other hand, the method has its drawbacks in the heavy calibration process: "In order to eliminate the deviation of attenuation in the	signal, the RSS values are to be averaged over a certain time interval up to several minutes at each fingerprint location." \cite{recentAdvances} Infrastructural changes, for instance  (re-) moving of objects and \ac{ap}s entail modifications in the RSSI database, such that the calibration process must be repeated periodically to keep the system up-to-date.
+
+
+
+\subsection{Particel Filters}
 Particel filter method represents a class of hybrid methods combining the advantages of DR and Map Matching with sequential Monte Carlo approximations.\cite{particleFilter}\\
+
 The idea is to use randomly distributed samples - so-called \textit{particles} to represent all possible positions of an object. Based on any available information, e.g., pre-configured floorplans, motion profiles and laws of physics (e.g., targets move away with a well-known speed throgh buildings and can not go through walls, etc.), a \textit{weight} or probability is assigned to each particle. The next step is \textit{resampling}: Whereas unlikely particles are removed, those with enough weight are re-distributed according to their density and weight.
 The resampled particle set is then relocated based on the motion model. In order to eliminate noise in the resulting set, the particles are again distributed among the now likeliest places (see step \emph{Diffuse} in Figure \ref{img:particleFilter}) and finally weighted based on available DR (and possibly additional) positioning information.
 That location showing the highest probability density is then the particle filtering positioning result.\\
@@ -164,9 +178,7 @@ The overall particle filtering process including subprocesses is depicted in Fig
 
 
 \section{Outdoor Positioning}
-This section is about the outdoor positioning technologies GNSS, WiMAX and cellular networks. GNSSs are on the rise and only global solution, but other technologies are also capable to provide localization services in limited outdoor areas. Although their main drawback, limited coverage, makes them hardly applicable in a global context.
-Besides that a globally networked installation fails due to its inapplicability in many places at earth (oceans, high mountains or deep valleys), also the required density and amount of base stations to reach comparable coverage and accuracy to GNSSs is technically and monetarily inconceivable.
-
+In this section, various outdoor positioning technologies (GNSS,WiMAX, GSM) are presented and then analyzed wrt. their applicability and accuracy.
 
 \subsection*{\ac{gnss}}
 % 0) quick Overview
@@ -199,7 +211,7 @@ GPS is applied in social, economic and scientific areas. Typical applications ra
 % 3) Generelle Funktionsweise
 %-----------------------------
 %Doppler Effekt: zeitliche Dehnung eines Signals entsprechend der Geschwindigkeit.
-The common concept of all GNSSs are interconnected, clock-synchronized satellites (mostly more than 20) and ground stations such that trilateration (\ac{toa}) with a radio signals (GPS L1 signals: 1575,42 MHz) and calculations respecting the doppler effect are applicable. By that, an accuracy of 2-500m can be achieved.
+The common concept of all GNSSs are interconnected, clock-synchronized satellites and ground stations such that trilateration (\ac{toa}) with a radio signals (GPS L1 signals: 1575,42 MHz) and calculations respecting the doppler effect are applicable. By that, an accuracy of 2-500m can be achieved.
 
 %GPS Almanach: umlaufbahnen, sat status, uhrabweichungen, atmosphärische daten. 1 woche gültig-> muss runtergeladen werden (bis zu 12min über satellite, übers gsm(A-GPS) deutlich schneller)
 General information about exact satellite orbits, statuses, clock deviations and atmospheric data is summarized under the GPS Almanach. Clients with corresponding GPS receiver can download this Almanach and start positioning. The Almanach is mostly receiced over the GSM network, as downloads directly from the satellite might take several minutes and is thus not applicable.
@@ -241,92 +253,26 @@ They conclude that signal acquisition through concrete walls with 25dB attenuati
 % Satellitennavigation: https://www.youtube.com/watch?v=lPkETIy0P9E
 
 \subsection*{WiMAX}
-% 0) quick Overview
-% 1) Geschichte und Verbreitung
-% 2) Anwendungen - wer nutzt es? 
-% 3) Generelle Funktionsweise
-% 4) Besondere Eigenschaften - Vor und Nachteile
-%--------------------------------
-% 0) quick Overview
-This technology is part of the IEEE 802.16 protocol family and like WLAN (IEEE 802.11) a radio technology. Unlike WLAN, WiMAX (Worldwide Interoperability for Microwave Access) can operate at "higher speeds, over greater distances and for a greater number of users" \cite{wimax}.
-
-% 1) Geschichte und Verbreitung
-
-% 2) Anwendungen - wer nutzt es? 
-
-% 3) Generelle Funktionsweise
-In particular, this technology works with partially interconnected base stations which are connected to the internet via high bandwidth, wired connection and are wireless accessible by receivers within a cell radius of three to ten kilometers \cite{wimaxForumFAQ}.
-
-The overall functioning is illustrated in Figure \ref{img:wimax}.
-
-\image{9cm}{grafiken//4)howWiMAXworks.PNG}{How WiMAX works  \cite{wimax}}{img:wimax}
-
-% 4) Besondere Eigenschaften - Vor und Nachteile
-There are two modes of operation: Line-of-sight and non-line-of-sight, whereas the former sends at higher frequencies (licenced 2-11 GHz and unlicenced 10-66 GHz) and is thus more stable and offers lots more bandwidth \cite{wimax}.
-By that, wireless internet access in rural areas and small cities can be provided, and can even deep indoors be accessed, e.g. with receiver stations on buildings acting like as repeaters.
+This technology is part of the IEEE 802.16 protocol family and like WLAN (IEEE 802.15) a radio technology. Unlike WLAN, WiMAX (Worldwide Interoperability for Microwave Access) can operate "at higher speeds, over greater distances and for a greater number of users." \cite{wimax} In particular, this technology works with partially interconnected base stations which are connected to the internet via high bandwidth, wired connection and are accessible by receivers in an area of around 8.000 square km.
 
 
 \subsection*{Cellular Networks/GSM}
-% 0) quick Overview
-% 1) Geschichte und Verbreitung
-% 2) Anwendungen - wer nutzt es? 
-% 3) Generelle Funktionsweise
-% 4) Besondere Eigenschaften - Vor und Nachteile
-%--------------------------------
-
-% 0) quick Overview
-Cellular networks such as mobile \ac{gsm} networks for telecommunication are organized in cells of different size.
- % 3) Generelle Funktionsweise
-In general, positioning in those cells is done with distance-based methods and is thus, due to the base stations' high distance, not very percise (25-100m whenever there is good coverage).
-Cellular-based positioning is also possible in combination with triangulation and high-directional antennas.
-
-% 4) Besondere Eigenschaften - Vor und Nachteile
-Nevertheless, researchers found that accuracy with GSM could also be improved to up to 2.5m indoors using wide signal-strength fingerprints of up to "29 additional GSM channels, most of which are strong enough to be detected but too weak to be used for efficient communication." \cite{surveyWirelessIPS}
-
 
 \section{Indoor Positioning}
+
 This subsection presents various indoor positioning technologies and methods.
-Whereas outdoor positioning typically relies GNSSs, indoors other technologies, such as WLAN, Bluetooth, RFID and Ultrasound can provide much higher accuracy.
-% vllt noch system beispiele from +# a survey..
+Whereas outdoor positioning typically relies on trilateration, indoor environments offer lots of alternatives.
+
 
 \subsection*{WLAN}
-% 0) quick Overview
-% 1) Geschichte und Verbreitung
-\ac{wlan} (IEEE 802.11) was standardized in 1997 and is the most popular midrange local wireless networking technology. Its infrastructure, i.e.  routers and \ac{ap}s, is usually provided in most buildings.
-WLAN devices operate at 11, 54, or 108 Mbps and have a typical range of 50-100m.
-% 3) Generelle Funktionsweise
-% 4) Besondere Eigenschaften - Vor und Nachteile
-
-The most applied method with WLAN are signal-strength-based methods, such as RSSI and fingerprinting. Time- and distance-based methods are "less common in WLAN due to the complexity of time delay and angular measurements" \cite{wirelessILSystemsAndTechniques}.
-The accuracy of positioning systems using RSS can vary from "3 to 30m, with an update rate of a few seconds" \cite{surveyWirelessIPS}. However, most systems can provide accuracy of less than 5m \cite{seamlessIOsolutions}, such as RADAR which was invented by a Microsoft research group in 2000 and provides 2-3m accuracy using \textquotedblleft signal strength and signal-to-noise ratio with
-the triangulation location technique" \cite{surveyIPS}.
 
 \subsection*{Bluetooth}
-Bluetooth (IEEE 802.15) is a wireless \ac{wpan} standard operating at the 2.4 GHz ISM band. It offers "high security, low cost, low power and small size" \cite{recentAdvances} but has, compared to WLAN, also a smaller range of 10m to 15m and lower bit rates of 1 Mbps \cite{surveyWirelessIPS}.
-Localization with Bluetooth works with small transceivers, called tags, which have unique IDs that can be used for localization.
-
-The main drawback of Bluetooth-based positioning is the lengthy positioning process which requires \ac{bt} device discovery to be processed. As this step takes several seconds (10-30), it is unsuitable for real-time approaches \cite{recentAdvances}. Also pre-installation of tags in various points of interest is required. Nevertheless, indoor navigation with Bluetooth tags is a lightwight alternative to WLAN or Ultrasound.
 
 \subsection*{RFID}
-Localization with the \ac{rfid} technology works with wearable tags which emit or reflect radio waves. Scanning devices are organized in a network, whereas a single device can cover an area of several meters. RFID readers can read emitted data from tags which are available in two variants, active or passive. The former are battery-driven transceivers and are mostly applied in combination with proximity detection due to range limitations. But there are also tags which can transmit signals over tens of meters \cite{surveyWirelessIPS}, such there is basically any positioning method applicable. 
-The RFID technology offers three different radio frequencies: low (125-134 kHz), high (13.56 MHz) and ultra-high frequency (860-960 MHz) and can thus successfully operate at non-line-of-sight environments \cite{wirelessILSystemsAndTechniques}.
-
-Passive tags act as replacement for traditional barcode technology. They have no battery and thus only "reflect the RF signal transmitted to them from a reader and add information by modulating the reflected signal" \cite{surveyWirelessIPS}.
-
-The main drawback of the RFID technology is its limited range of low and high frequency, the need for a tag to be carried along and the required installation of receivers.
 
 \subsection*{Ultrasound}
-Another positioning technology is Ultrasound
 
-
-
-
-
-
-
-
-
-
+\subsection*{Frequency Modulation}
 
 
 
@@ -351,31 +297,11 @@ Another positioning technology is Ultrasound
 \subsection*{use SNR and GPS accuracy, dependent on going indoors or outdoors}
 
 \section{Assessment and Conclusion}
-\subsection*{Methods}
-
-\cite{wirelessILSystemsAndTechniques} methods comparison
-
-RFID is, compared to BT more applicable for real-time apps.
-\cite{recentAdvances}: evaluation tables:
-\image{12cm}{grafiken//semImg//methodsComparisonOriginal.PNG}{Evaluation of positioning methods wrt. accuracy, coverage, multipath affection and cost \cite{recentAdvances}}{img:methodsEval}
-
-\image{12cm}{grafiken//technologiesComparisonCut.PNG}{Evaluation of positioning technologies wrt. accuracy, coverage, power consumption and cost \cite{recentAdvances}}{img:techEval}
-------------------------------------------
-% From fingerprinting: 
-
-An advantage of this method is its low cost: it does "not require specialized hardware in either the mobile device or the receiving end nor is no time synchronization necessary between the stations." \cite{recentAdvances} On the other hand, the method has its drawbacks in the heavy calibration process: "In order to eliminate the deviation of attenuation in the	signal, the RSS values are to be averaged over a certain time interval up to several minutes at each fingerprint location." \cite{recentAdvances} Infrastructural changes, for instance  (re-) moving of objects and \ac{ap}s entail modifications in the RSSI database, such that the calibration process must be repeated periodically to keep the system up-to-date.
-
-
-% From MM:
-
-Obviously, combinations of those algorithms improve positioning accuracy, such that they often occur at least pairwise. \cite{mmSystem}, for example, uses a combination of geometrical, topological and probabilistic algorithms to ensure an optimal result. The authors also refined the geometrical algorithm such that the shift between positioning estimate and projection is applied to the next measurement, which leads to a more accurate localization.
-
-% 
 \subsection*{Outdoor positioning}
 		%Saltelliten, da z.b. sendemasten zu kleine gebiete abdecken können und außerdem in tälern (schattenseite) nicht positionieren
 	A network of satellites is the only way to cover global range, as for example networked base stations would require partially unfeasible installation of transceivers anywhere on Earth (e.g. in oceans, mountains, dells and gorges etc.) to provide equal coverage.
 	
-
+	
 \subsection*{Indoor positioning}
 	
 \subsection*{Datamodel}

@@ -9,6 +9,14 @@ Atia, M., Korenberg, M. \harvardand\ Noureldin, A.  \harvardyearleft April
   IEEE/ION Position Location and Navigation Symposium (PLANS ’12), pp.
   1068–1073} .
 
+\harvarditem[Attia et~al.]{Attia, Moussa, Zhao \harvardand\
+  El-Sheimy}{2014}{mmSystem}
+Attia, M., Moussa, A., Zhao, X. \harvardand\ El-Sheimy, N.  \harvardyearleft
+  2014\harvardyearright .
+\newblock {Assisting Personal Positioning In Indoor Environments Using Map
+  Matching}, {\em Archives of Photogrammetry, Cartography and Remote Sensing,
+  Vol. 22, 2011, pp. 39-49} .
+
 \harvarditem{Brain \harvardand\ Grabianowski}{2004}{wimax}
 Brain, M. \harvardand\ Grabianowski, E.  \harvardyearleft 2004\harvardyearright
   .
@@ -19,10 +27,24 @@ Cosmos-Indirekt  \harvardyearleft 2017\harvardyearright .
 \newblock {Globales Navigationssatellitensystem},
   \url{https://physik.cosmos-indirekt.de/Physik-Schule/Globales_Navigationssatellitensystem}.
 
-\harvarditem{E \harvardand\ Ma}{2013}{seamlessIOresearch}
-E, J. \harvardand\ Ma, J.  \harvardyearleft 2013\harvardyearright .
-\newblock {A Research on Seamless Indoor and Outdoor Positioning}, {\em Journal
-  of Computers, Vol. 8, NO. 12} .
+\harvarditem[Davidson et~al.]{Davidson, Collin \harvardand\ Takala}{o.
+  J.}{particleFilter}
+Davidson, P., Collin, J. \harvardand\ Takala, J.  \harvardyearleft o.
+  J.\harvardyearright .
+\newblock {Application of Particle Filters for Indoor Positioning Using Floor
+  Plans}, {\em Department of Computer Systems Tampere University of Technology,
+  Finland} .
+
+\harvarditem[Eissfeller et~al.]{Eissfeller, Teuber \harvardand\
+  Zucker}{2005}{gpsIndoorsMoeglich}
+Eissfeller, B., Teuber, A. \harvardand\ Zucker, P.  \harvardyearleft
+  2005\harvardyearright .
+\newblock {Indoor-GPS: Ist der Satellitenempfang in Gebäuden möglich?}
+
+\harvarditem{et. al.}{2016}{uwbILSpic}
+et. al., A.~A.  \harvardyearleft 2016\harvardyearright .
+\newblock {Ultra Wideband Indoor Positioning Technologies: Analysis and Recent
+  Advances}, {\em Sensors 2016, Vol. 16, Nr. 707} .
 
 \harvarditem[Farid et~al.]{Farid, Nordin \harvardand\
   Ismail}{2013}{recentAdvances}
@@ -54,6 +76,15 @@ Hansen, R., Wind, R., Jensen, C.~S. \harvardand\ Thomsen, B.  \harvardyearleft
   Services in Streamspin}, {\em 2009 Tenth International Conference on Mobile
   Data Management: Systems, Services and Middleware} .
 
+\harvarditem{{\em {Image source: }}}{o. J.a}{imgSrc}
+{\em {Image source: }}  \harvardyearleft o. J.a\harvardyearright .
+\newblock
+  \url{https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Inverse_square_law.svg/330px-Inverse_square_law.svg.png}.
+
+\harvarditem{{\em {Image source: }}}{o. J.b}{particleFilterImg}
+{\em {Image source: }}  \harvardyearleft o. J.b\harvardyearright .
+\newblock \url{https://taylor.raack.info/tag/particle-filters}.
+
 \harvarditem[Iwata et~al.]{Iwata, Ishikawa, Takayama, Yanagisawa \harvardand\
   Togawa}{2018}{ai1}
 Iwata, S., Ishikawa, K., Takayama, T., Yanagisawa, M. \harvardand\ Togawa, N.
@@ -61,6 +92,11 @@ Iwata, S., Ishikawa, K., Takayama, T., Yanagisawa, M. \harvardand\ Togawa, N.
 \newblock {Robust Indoor/Outdoor Detection Method based on Sparse GPS
   Positioning Information}, {\em 2018 IEEE 8th International Conference on
   Consumer Electronics - Berlin (ICCE-Berlin)} .
+
+\harvarditem{{Jinlong et al.}}{2013}{seamlessIOresearch}
+{Jinlong et al.}  \harvardyearleft 2013\harvardyearright .
+\newblock {A Research on Seamless Indoor and Outdoor Positioning}, {\em Journal
+  of Computers, Vol. 8, NO. 12} .
 
 \harvarditem{Kalliola}{2008}{navIndoors}
 Kalliola, K.  \harvardyearleft 2008\harvardyearright .
@@ -70,6 +106,14 @@ Kalliola, K.  \harvardyearleft 2008\harvardyearright .
 KBV-Research  \harvardyearleft 2017\harvardyearright .
 \newblock {Global Indoor Location Market Analysis (2017-2023)},
   \url{https://www.reportlinker.com/p05207399/Global-Indoor-Location-Market-Analysis.html}.
+
+\harvarditem[Khudhair et~al.]{Khudhair, Jabbar, Sulttan \harvardand\
+  Wang}{2016}{wirelessILSystemsAndTechniques}
+Khudhair, A., Jabbar, S., Sulttan, M. \harvardand\ Wang, D.  \harvardyearleft
+  2016\harvardyearright .
+\newblock {Wireless Indoor Localization Systems and Techniques: Survey and
+  Comparative Study}, {\em Indonesian Journal of Electrical Engineering and
+  Computer Science, Vol. 3, Nr. 2, 2016, pp. 392-409} .
 
 \harvarditem[Kim et~al.]{Kim, Lee, Lee \harvardand\
   Cha}{2012}{seamlessGPShandoverStrategy}
@@ -99,6 +143,22 @@ Link, M.  \harvardyearleft 2018\harvardyearright .
   \url{https://www.heise.de/newsticker/meldung/Das-Navi-weiss-den-Weg-40-Jahre-GPS-Satelliten-3975516.html}.
 \newblock "[Online; accessed 09-July-2019]".
 
+\harvarditem[Liu et~al.]{Liu, Darabi, Banerjee \harvardand\
+  Liu}{2007a}{surveyWirelessIPS}
+Liu, H., Darabi, H., Banerjee, P. \harvardand\ Liu, J.  \harvardyearleft
+  2007a\harvardyearright .
+\newblock {Survey of Wireless Indoor Positioning Techniques and Systems}, {\em
+  HIEEE TRANSACTIONS ON SYSTEMS, MAN, AND CYBERNETICS—PART C: APPLICATIONS
+  AND REVIEWS, VOL. 37, NO. 6, NOVEMBER 2007} .
+
+\harvarditem[Liu et~al.]{Liu, Darabi, Banerjee \harvardand\
+  Liu}{2007b}{wirelessILSystemsAndTechniquesSurvey}
+Liu, H., Darabi, H., Banerjee, P. \harvardand\ Liu, J.  \harvardyearleft
+  2007b\harvardyearright .
+\newblock {Survey on Wireless Indoor Positioning Techniques and Systems}, {\em
+  IEEE transactions on systems, man, and cybernetics-part C: applications and
+  reviews, Vol. 37, Nr. 6} .
+
 \harvarditem{Maghdid}{2015}{hybridizationGNSSPhd}
 Maghdid, H.~S.  \harvardyearleft 2015\harvardyearright .
 \newblock {Hybridisation of GNSS with other Wireless/Sensors Technologies
@@ -106,9 +166,9 @@ Maghdid, H.~S.  \harvardyearleft 2015\harvardyearright .
   Applications}, {\em Department of Applied Computing, The University of
   Buckingham, United Kingdom} .
 
-\harvarditem{Maghdid \harvardand\ Lami}{February 2016}{seamlessIOsolutions}
-Maghdid, H.~S. \harvardand\ Lami, I.~A.  \harvardyearleft February
-  2016\harvardyearright .
+\harvarditem{Maghdid \harvardand\ Lami}{2016}{seamlessIOsolutions}
+Maghdid, H.~S. \harvardand\ Lami, I.~A.  \harvardyearleft 2016\harvardyearright
+  .
 \newblock {Seamless Outdoors-Indoors Localization Solutions on Smartphones:
   Implementation and Challenges}, {\em ACM Computing Surveys, Vol. 48, No. 4,
   Article 53} .
@@ -118,10 +178,37 @@ Mai, T.  \harvardyearleft 2017\harvardyearright .
 \newblock {Global Positioning System History},
   \url{https://www.nasa.gov/directorates/heo/scan/communications/policy/GPS_History.html}.
 
-\harvarditem{MarketsandMarkets \harvardand\ Rohan}{2017}{indoorMarket22markets}
-MarketsandMarkets \harvardand\ Rohan  \harvardyearleft 2017\harvardyearright .
+\harvarditem{{Markets and Markets}}{2017}{indoorMarket22markets}
+{Markets and Markets}  \harvardyearleft 2017\harvardyearright .
 \newblock {Indoor Location Market worth 40.99 Billion USD by 2022},
   \url{https://www.marketsandmarkets.com/PressReleases/indoor-location.asp}.
+
+\harvarditem[Patterson et~al.]{Patterson, Muntz \harvardand\
+  Pancake}{2003}{challengesLBS}
+Patterson, C.~A., Muntz, R.~R. \harvardand\ Pancake, C.~M.  \harvardyearleft
+  2003\harvardyearright .
+\newblock {Challenges in Location- Aware Computing}, {\em IEEE Pervasive
+  Computing, vol. 2, no. 2, pp. 80-89.} .
+
+\harvarditem[Pratama et~al.]{Pratama, Widyawan \harvardand\ Hidayat}{o.
+  J.}{drSystem}
+Pratama, A.~R., Widyawan \harvardand\ Hidayat, R.  \harvardyearleft o.
+  J.\harvardyearright .
+\newblock {Smartphone-based Pedestrian Dead Reckoning as an Indoor Positioning
+  System}, {\em 2012 International Conference on System Engineering and
+  Technology September 11-12, 2012, Bandung, Indonesia} .
+
+\harvarditem[Priyantha et~al.]{Priyantha, Miu, Balakrishnan \harvardand\
+  Teller}{o. J.}{mitILSystem}
+Priyantha, N.~B., Miu, A. K.~L., Balakrishnan, H. \harvardand\ Teller, S.
+  \harvardyearleft o. J.\harvardyearright .
+\newblock {The Cricket Compass for Context-Aware Mobile Applications}, {\em MIT
+  Laboratory for Computer Science} .
+\newline\harvardurl{http://nms.lcs.mit.edu/cricket/}
+\harvarditem{reports}{2018}{indoorMarket2022}
+reports, W.~G.  \harvardyearleft 2018\harvardyearright .
+\newblock {Indoor Location - Global Market Outlook (2016-2022)},
+  \url{https://www.wiseguyreports.com/sample-request/827000-indoor-location-global-market-outlook-2016-2022}.
 
 \harvarditem[Török et~al.]{Török, Pach, Nagy \harvardand\
   Kovats}{2014}{drear}
@@ -129,11 +216,6 @@ Török, A., Pach, P., Nagy, A. \harvardand\ Kovats, L.  \harvardyearleft
   2014\harvardyearright .
 \newblock {DREAR- Towards Infrastructure-free Indoor Localization via
   Dead-Reckoning Enhanced with Activity Recognition}.
-
-\harvarditem{und Andreas Teuber~und Peter~Zucker}{2005}{gpsIndoorsMoeglich}
-und Andreas Teuber~und Peter~Zucker, B.~E.  \harvardyearleft
-  2005\harvardyearright .
-\newblock {Indoor-GPS: Ist der Satellitenempfang in Gebäuden möglich?}
 
 \harvarditem[Wang et~al.]{Wang, Lu, Zhang \harvardand\
   Jiang}{2019}{sensorFusion1}
@@ -147,10 +229,10 @@ Wang, D., Lu, Y., Zhang, L. \harvardand\ Jiang, G.  \harvardyearleft
 {\em {What is EGNOS?}}  \harvardyearleft 2018\harvardyearright .
 \newblock \url{https://www.gsa.europa.eu/egnos/what-egnos}.
 
-\harvarditem{wise~guy reports}{2018}{indoorMarket2022}
-wise~guy reports  \harvardyearleft 2018\harvardyearright .
-\newblock {Indoor Location - Global Market Outlook (2016-2022)},
-  \url{https://www.wiseguyreports.com/sample-request/827000-indoor-location-global-market-outlook-2016-2022}.
+\harvarditem{{WiMAX Forum}}{2019}{wimaxForumFAQ}
+{WiMAX Forum}  \harvardyearleft 2019\harvardyearright .
+\newblock {Frequently Asked Questions},
+  \url{http://wimaxforum.org/Page/Resources/FAQ}.
 
 \harvarditem[Xia et~al.]{Xia, Liu, Yuan, Zhu \harvardand\
   Wang}{2017}{indoorFingerprinting}
@@ -159,6 +241,13 @@ Xia, S., Liu, Y., Yuan, G., Zhu, M. \harvardand\ Wang, Z.  \harvardyearleft
 \newblock {Indoor Fingerprint Positioning Based on Wi-Fi: An Overview}, {\em
   International Journal of Geo-Information} .
 
+\harvarditem[Yang et~al.]{Yang, Xiao, Liu, Cui \harvardand\
+  Liu}{2012}{otoaUltrasound}
+Yang, Y., Xiao, J., Liu, Z., Cui, J. \harvardand\ Liu, D.  \harvardyearleft
+  2012\harvardyearright .
+\newblock {Indoor Ultrasonic Positioning System Based on CDMA-TDOA and Its
+  Ultrasonic Signal Analysis}, {\em Advanced Materials Research} .
+\newline\harvardurl{10.4028/www.scientific.net/AMR.472-475.1017}
 \harvarditem[Zhu et~al.]{Zhu, Luo, Wang, Zhao, Ning, Ke \harvardand\
   Zhang}{2019}{machineLearningIO}
 Zhu, Y., Luo, H., Wang, Q., Zhao, F., Ning, B., Ke, Q. \harvardand\ Zhang, C.

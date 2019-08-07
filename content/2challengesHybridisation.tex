@@ -8,7 +8,7 @@ Facing the need for hybridization in seamless I/O navigation systems, system des
 	\item Technology selection:
 
 	First of all, the selection of suitable technologies: 
-	There is a spread of technologies available for indoor and outdoor positioning, such as WiMAX, GPS and CellID (GSM) outdoors and WLAN, Bluetooth, RFID, NFC, Infrared, Ultrasound, ZigBee, ZWave and others indoors. Outdoor positioning technologies typically require clear sky view for optimal positioning, as walls and steal in buildings attenue the signals by the 100-1000 fold.
+	There is a spread of technologies available for indoor and outdoor positioning, such as WiMAX, GPS and CellID (GSM) for outdoors and WLAN, Bluetooth, RFID, NFC, Infrared, Ultrasound, ZigBee, Z-Wave etc. for indoors. Outdoor positioning technologies typically require clear sky view for optimal positioning, as walls and steal in buildings attenue the signals by the 100-1000 fold.
 	It is thus necessary to evaluate the technologies' advantages and disadvantages wrt. their suitability to the respective requirements.
 	
 	Mostly, a single technology is insufficient for seamless I/O positioning: on the one hand, outdoor technologies are either not available indoors or do not provide satisfactory accuracy. On the other hand, indoor positioning technologies require configuration and/or installation of hardware and are thus only available (and reliable) in presence of sensors.
@@ -17,6 +17,7 @@ Facing the need for hybridization in seamless I/O navigation systems, system des
 	
 	% schalte ich um und wann am besten ?% welchem Signal vertraue ich wann mehr?
 	\item Determinition of handover strategies:
+	
 	%, from a purely technical viewpoint
 	Positioning systems need a strategy to decide which technology to trust more in case both indoor and outdoor positioning signals are available. Multiple variants are conceivable, e.g., one could either consequently only use one of the available technologies, or use mathematical functions like the mean of all received positioning results origining from both indoor and outdoor technology. Also solutions assigning weights to the measurements in different, predefined situations are imaginable, but this would require elaborate pre-configuration for every building (and the area around it).
 	\cite{streamspin} reveals that a strategy where GPS is prefered over WLAN uppon continuous readings (in intervals of five seconds) performs more accurate than use one of both until signal loss.
@@ -37,8 +38,9 @@ Facing the need for hybridization in seamless I/O navigation systems, system des
 
 	\item Navigation requirements:
 	
-	For outdoor navigation issues one could easily use the road network detected by GPS, but for indoor approaches relations like spatial containment, distances between entities have to be explicitly modeled. Also the different movement patterns, i.e. walking, taking stairs or the elevator, with their specificly required time shall be considered. For further refinement one could provide semantic information like accessibility, barrier liberty or the room type.
+	For outdoor navigation issues one could easily use the road network detected by GPS, but for indoor approaches spatial relations like containment, adjacent entities and distances between entities have to be explicitly modeled. Also the different movement patterns, i.e. walking, taking stairs or the elevator, with their specificly required time shall be considered. For further refinement one could provide semantic information like accessibility, barrier liberty or the room type.
 % Welche Strategie ist sinnvoll ? standalone, on-the-go, cooperative?
+
 	\item Positioning strategy evaluation:\\
 	The determinition of which positioning strategy to use highly depends on a system's requirements: in case security and privacy is essential, all positioning calculations have to be done on client-side. In contrast, if a real-time monitoring of all entities in a certain area is required, a server-based approach is a better option.
 	Another alternative represent cooperative strategies where positioning is based on other entities' signals (i.e. not only from satellites and APs). The respective advantages and drawbacks are discussed in Section 4.

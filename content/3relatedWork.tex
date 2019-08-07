@@ -6,7 +6,7 @@
 This section presents and assess related works covering indoor/outdoor navigation and datamodels. Their respective drawbacks are determined and their approaches delimited in relation to this work.
 
 % Indoor and Outdoor Positioning
-The research area of indoor and outdoor positioning technologies and methods also forms part of this work, but this area is already explored sufficiently in recent years by various other researchers (\cite{seamlessIOsolutions}, \cite{surveyIPS}, \cite{recentAdvances}), such that no prototyping and testing is required anymore and one can use their well-confirmed evaluation results.
+The research area of indoor and outdoor positioning technologies and methods also forms part of this work, but this area is already explored sufficiently in recent years by various other researchers \tripplecite{\cite{seamlessIOsolutions}}{\cite{surveyIPS}}{\cite{recentAdvances}}, such that no prototyping and testing is required anymore and one can use their well-confirmed evaluation results.
 
 % darauf aufbauende Ansätze (meine Quellen für technologies and methods) 	
 % Indoor positioning
@@ -30,10 +30,10 @@ Some authors treating I/O transition only focus on single technologies and metho
 I/O transitions are also topic in \cite{transitionalSpaces}, but they focus on finding and presenting examples for transitional spaces and their properties only, and a answer to the question how to integrate this knowledge into a positioning system is not provided.
 
 % bad example: Jinlong, 2013: Research on Seamless IO
-A comparison of existent systems can be found in \cite{seamlessIOresearch}, but there only four existing systems are presented, which does not even yield a sensible overview - other authors assess more than ten solutions (\cite{seamlessIOsolutions}). Also, existing technologies, methods and transition strategies are poorly described - and a series of them even completely omitted.
+A comparison of existent systems can be found in \cite{seamlessIOresearch}, but there only four existing systems are presented, which does not even yield a sensible overview - other authors assess more than ten solutions \cite{seamlessIOsolutions}. Also, existing technologies, methods and transition strategies are poorly described - and a series of them even completely omitted.
 
 % 2) good example 1) Streamspin (Hansen et al.2009)
-Fortunately, various authors also provide sensible overviews to indoor/outdoor transitions, such as Hansen et al. (2009, Streamspin, \cite{streamspin}), who worked out and evaluated four different strategies for transition in I/O positioning with WLAN fingerprinting and GPS: 1) always prefer GPS, 2) always prefer WLAN, 3) prefer GPS until lost signal, then prefer WLAN until lost signal and 4) prefer GPS upon continuous readings (until signal loss of five seconds).
+Fortunately, various authors also provide sensible overviews to indoor/outdoor transitions, such as \cite{streamspin}, who worked out and evaluated four different strategies for transition in I/O positioning with WLAN fingerprinting and GPS: 1) always prefer GPS, 2) always prefer WLAN, 3) prefer GPS until lost signal, then prefer WLAN until lost signal and 4) prefer GPS upon continuous readings (until signal loss of five seconds).
 The authors conclude that strategy 4) is the most precise and reliable solution, which is also confirmed by \cite{seamlessIOresearch}.
 However, they do not assess other technologies and methods, specially hybride low-cost approaches like with RFID or BT technology and approaches focusing on minimal configuration are left out. Furthermore, their system design is ineffizient, cause as soon as users pass a building (and do not enter it) its indoor radio map is downloaded, which could possibly lead to massive overhead.
 This work's Section 4.2.1 gives deeper insight to drawbacks of the WLAN fingerprinting solution.
@@ -53,9 +53,7 @@ Unfortunately, they do not evaluate the aid of indoor localization technologies 
 %and use GPS even indoors (but with reduced sampling interval).
 
 % heutiger Stand: AI and fuzzy logic
-Papers published in the past two years mostly use advanced methods like fuzzy logic, artificial intelligence (\cite{ai1}), sensor fusion (\cite{sensorFusion1}) and extended Kalman or particle filters to overcome noisy measurements and improve accuracy. One of the drawbacks of such techniques is their complexity and high calculation effort, such that the required computing power can either not be provided on smartphones or is only feasible under massive energy consumption.\\
-
-
+Papers published in the past two years mostly use advanced methods like fuzzy logic, artificial intelligence \cite{ai1}, sensor fusion \cite{sensorFusion1} and extended Kalman or particle filters to overcome noisy measurements and improve accuracy. One of the drawbacks of such techniques is their complexity and high calculation effort, such that the required computing power can either not be provided on smartphones or is only feasible under massive energy consumption.\\
 
 
 %  conclusion

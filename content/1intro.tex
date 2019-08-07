@@ -18,7 +18,7 @@
 
 % 1.) Motivation/Zielsetzung/Vorgehen 
 % who needs it ? and what parts of applications are conceivable (=denkbar)?
-Seamless indoor-/outdoor (I/O) positioning forms a backbone for numerous upcoming applications: not only for ubiquitous \ac{lbs} like navigation, but also with regard to (wrt.) several \ac{iot} areas such as in sports, Smart Healthcare and Industry 4.0.
+Seamless indoor-/outdoor (I/O) positioning forms a backbone for numerous upcoming applications: not only for ubiquitous \ac{lbs} like navigation, but also with regard to (wrt.) several \ac{iot} areas such as in sports, \textit{Smart Healthcare} and \textit{Industry 4.0}.
  
 % referenz mit 70% indoor 
 The fact that people spend between 70\% and 90\% of their lives indoors \cite{navIndoors} and the emergence of new applications in the area of navigation, decision making and connection of devices might explain the high valuation of the indoor localization market in the coming years. While determined to be at 7.11 Billion in 2017, the forecasts vary between USD 29.4 Billion \cite{indoorMarket2022} % indoorMarket2022: \footnote{\url{https://www.reuters.com/brandfeatures/venture-capital/article?id=50849}} 
@@ -29,7 +29,7 @@ There are various applications conceivable: they range from apps providing locat
 
 % 90% according to:  K. Kalliola. 2008. Bringing navigation indoors. The Way We Live Next. Nokia
 % 2.) LBS & localization -> handover between technologies 
-Ubiquitous \ac{lbs} like I/O navigation require smooth interaction between indoor and outdoor positioning technologies, including a handover strategy for switching between them. That is because outdoor localization technologies are mostly not able to provide satisfying accuracy indoors and vice versa.
+I/O navigation services require smooth interaction between indoor and outdoor positioning technologies, including a handover strategy for switching between them. That is because outdoor localization technologies are mostly not able to provide satisfying accuracy indoors and vice versa.
 
 % I/O technologies
 
@@ -38,32 +38,37 @@ Although there are several choices for outdoor localization technologies, most s
 
 % GPS indoor
 GNSSs can also be applied in some special indoor cases:
-%TODO: referenz!
-for example, if persons reside close to windows or in areas where the sky is partially visible. But in most cases it is not available indoors and people can typically expect signal loss on entrance.
+
+for example, if persons reside close to windows or in areas where the sky is partially visible \cite{gpsIndoorsMoeglich}. But in most cases it is not available indoors and people can typically expect signal loss on entrance.
 
 % GESCHICHTE: erste Ansätze WLAN + GPS 
-Historically, GNSS-assisted localization has been developed independent but in paralell by the US Department of Defense (DoD) and the russion federation in the mid 1970's and was first operational in the early 1990's \doublecite{\cite{gpsHistory}}{\cite{gnssWiki}}. %\footnote{\url{https://www.nasa.gov/directorates/heo/scan/communications/policy/GPS_History.html}}
+Historically, GNSS-assisted localization has been developed independent but in paralell by the US Department of Defense (GPS NAVSTAR) and the russion federation (Glonass) in the mid 1970's and was first operational in the early 1990's \doublecite{\cite{gpsHistory}}{\cite{gnssWiki}}. %\footnote{\url{https://www.nasa.gov/directorates/heo/scan/communications/policy/GPS_History.html}}
 In 1996, researchers published the paper "Global Positioning System: Theory and Applications, Volume I", informing about GPS fundamentals like physical and technical concepts and applicable algorithms, and being basis for further research and economical interest in this area. In May 2000, the U.S. government switched off the Selective Availability (SA) interfering signal, which basically made GPS not publicly applicable due to a approximate error of 100m.
 
-Building on those achievements, and the development and dissemination of the WLAN technology, fundamental research in the field of indoor localization has been carried out by Bahl and Padmanadhabhan in 2000 ("RADAR: An In-Building RF-based User Location and Tracking System"), Chen and Kobayashi in 2002 ("Signal Strength Based Indoor Geolocation"), and later by Tan et al. ("Positioning techniques for fewer than four GPS satellites"), Li and Rizos ("Positinoning where standard GPS fails") and Gallagher et al. ("Wi-Fi + GPS for urban canyon positioning" \cite{wifiGPSUrbanCanyon}) in 2009.\\
+Building on those achievements, and the development and dissemination of the WLAN technology, fundamental research in the field of indoor localization has been carried out by Bahl and Padmanadhabhan in 2000 ("RADAR: An In-Building RF-based User Location and Tracking System"), Chen and Kobayashi in 2002 ("Signal Strength Based Indoor Geolocation"), and in 2009 by Tan et al. ("Positioning techniques for fewer than four GPS satellites"), Li and Rizos ("Positinoning where standard GPS fails") and Gallagher et al. ("Wi-Fi + GPS for urban canyon positioning" \cite{wifiGPSUrbanCanyon}).\\
+% TODO: mit cites ersetzen
 
-% TODO: living lab beschreiben!! % last-mile problem solution
- TODO: living lab beschreiben!!\\
- 
+
 % handover to the need for hybridization (ubiquitous LBSs) of GPS with WLAN
 According to various authors, best practice for seamless positioning is hybridization of GPS and at least one other indoor positioning technology, such as WLAN (\cite{wifiGPSUrbanCanyon}, \cite{streamspin}, \cite{zeroConfigGPSWLAN}). The used datamodel has to meet challenges origining from the combination of multiple technologies, e.g. supporting different levels of granularity and the ability to handle both symbolic indoor coordinates as well geometric GPS coordinates.
-Section 2 focuses on those and other challenges.
+Chapter 2 focuses on those and other challenges.
 
-% 3.) indoor positioning
-Indoor positioning systems typically make use of WLAN, because the required infrastructure is either already provided in most buildings or can easily be installed. Also Bluetooth, Ultrasound and RFID represent applicable technologies, but they have several drawbacks like the need for additional hardware. The evaluation in Section 4d) provides a more detailled overview to the individual pros and cons of positioning technologies.
+% 3.) indoor positioning 
+% TODO: chcek reference Chapter 4.3)
+Indoor positioning systems typically make use of WLAN, because the required infrastructure is either already provided in most buildings or can easily be installed. Also Bluetooth, Ultrasound and RFID represent applicable technologies, but they have several drawbacks like the need for additional hardware. The evaluation in Chapter 4d) provides a more detailled overview to the individual pros and cons of positioning technologies.
 
 % how can we achieve indoor localization/navigation/ILBSs? -> methods and technologies
-Localization methods such as triangulation and fingerprinting form the algorithmical backbone for positioning and use provided information to calculate or estimate a person's most likeliest position. Their difference in complexity, applicability and calculation effort and cost will also be evaluated in Section 4d).
+Localization methods such as triangulation and fingerprinting form the algorithmical backbone for positioning and use provided information to calculate or estimate a person's most likeliest position. Their difference in complexity, applicability and calculation effort and cost will also be evaluated in Chapter 4.3.
 
-Obviously, methods and technologies presented in this work could also applied to localize objects or robots, or measurement accuracy could be improved using artificial intelligence or mathematical models like Kalman filters, but this fields' focus is on other aspects and will therefore not be part of this work.\\
+% living lab beschreiben % last-mile problem solution
+This work arised from the idea of the \textit{Living Lab Bamberg}, which is an open research and development environment for sensor-based applications in the domain \textit{Smart Cities}, established at the University of Bamberg and other local stakeholders.
+The prototype designed in this work constitutes a demonstrator for how seamless, predestrian, I/O navigation with different technologies could be realized in a simple but extendable manner, and thus represents an environment-friendly solution to our cities' last-mile problem. Besides that, an user-supported alternative to high precision solutions is proposed.
+
+% Abgrenzung zu AI und accuracy-focus
+Obviously, methods and technologies presented in this work could also applied to localize objects or robots, or measurement accuracy could be improved using artificial intelligence or mathematical models like Kalman filters, but those fields' focus is on other aspects like always improving accuracy and will therefore not be part of this work.\\
 
 % 4.) "in this work/this work will..." -> Zielsetzung
-The aim of this work is to give an overview to the field of I/O positioning with a special focus on how seamless transitions between outdoor and indoor navigation could be realized and implemented. Therefore, first current outdoor- and indoor positioning technologies as well as suitable methods and datamodels for positioning are presented and evaluated. Subsequently, an indoor/outdoor pedestrian navigation system prototype is implemented based on that evaluation's findings.
+The aim of this work is to give an overview to the field of I/O positioning with a special focus on how seamless navigation indoors and outdoors could be realized and implemented. Therefore, first current outdoor- and indoor positioning technologies as well as suitable methods, data models and I/O transition solutions are presented and evaluated. Subsequently, an indoor/outdoor pedestrian navigation system prototype is implemented based on that evaluation's findings.
 Finally, the prototype's navigation results are presented and evaluated. The findings are then summarized and flown in future work proposals.\\
 
 
@@ -81,6 +86,6 @@ Key questions this work provides answers to are:
 % 6.) restliche Gliederung 
 The rest of this paper is structured as following:
 
-Section 2 gives deeper insight to the challenges coming up with hybrid navigation systems. Section 3 reviews related work in this area. The technical background including technology and method assessment is filling Section 4. Design and implementation of the navigation prototype is presented in Section 5. The evaluation of positioning and navigation results is then worked up in Section 6. Finally, Section 7 gives an outlook to possible future works in the field and concludes this work.
+Chapter 2 gives deeper insight to the challenges coming up with hybrid navigation systems. In Chapter 3 related work in this area is reviewed. The technical background including technology and method assessment is filling Chapter 4. Design and implementation of the navigation prototype is presented in Chapter 5. The evaluation of positioning and navigation results is then worked up in Chapter 6. Finally, Chapter 7 gives an outlook to possible future works in the field and concludes this work.
 
 %END

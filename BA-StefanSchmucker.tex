@@ -8,17 +8,32 @@
 %Titelseite
 %entsprechend Autor, Titel, Matrikelnummer, Email, Abgabetermin, Arbeitsart eintragen
 \author{Stefan Schmucker}
-\title{Design and implementation of indoor-/outdoor transitions in pedestrian navigation systems}
+%\title{Design and implementation of indoor-/outdoor transitions in pedestrian navigation systems}
+\title{Design and implementation of a seamless indoor-/outdoor pedestrian navigation system}
+% Commands ..
+
+%#1 Breite
+%#2 Datei (liegt im image Verzeichnis)
+%#3 Beschriftung
+%#4 Label fuer Referenzierung
+\newcommand{\image}[4]{%
+	\begin{figure}[H]%
+		\centering%
+		\includegraphics[width=#1]{#2}%
+		\caption{#3}%
+		\label{#4}%
+	\end{figure}%
+}
 \newcommand{\matrikel}{1749055}
 \newcommand{\email}{stefan.schmucker@uni-bamberg.de}
 \newcommand{\termin}{30.09.2019}
 \newcommand{\studiengang}{Software Systems Science}
 \newcommand{\arbeitstyp}{Bachelorarbeit}
 \pagenumbering{Roman} % große Römische Seitenummerierung
+
+
+
 \include{tex/titelseite}
-
-
-
 
 \pagestyle{headings} % normale Kopf- und Fußzeilen für den Rest
 %Inhaltsverzeichnis
@@ -28,6 +43,9 @@
 \chapter*{Abkürzungsverzeichnis}
 \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis} 
 \include{content/abbreviations}
+
+
+
 \vspace{9cm}
 
 %Abbildungsverzeichnis

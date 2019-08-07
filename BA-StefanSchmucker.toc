@@ -5,31 +5,30 @@
 \contentsline {chapter}{\nonumberline Tabellenverzeichnis}{VI}{chapter*.4}
 \contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
 \contentsline {chapter}{\numberline {2}Challenges wrt. Hybridization}{5}{chapter.2}
-\contentsline {chapter}{\numberline {3}Related Work}{8}{chapter.3}
-\contentsline {chapter}{\numberline {4}Technical Background/Technology Assessment}{11}{chapter.4}
-\contentsline {subsection}{\numberline {4.0.1}Outdoor Positioning}{11}{subsection.4.0.1}
-\contentsline {subsubsection}{\numberline {4.0.1.1}\ac {gnss}}{11}{subsubsection.4.0.1.1}
-\contentsline {subsubsection}{\numberline {4.0.1.2}WiMAX}{13}{subsubsection.4.0.1.2}
-\contentsline {subsubsection}{\numberline {4.0.1.3}Cellular Networks/GSM}{13}{subsubsection.4.0.1.3}
-\contentsline {subsection}{\numberline {4.0.2}Indoor Positioning}{13}{subsection.4.0.2}
-\contentsline {subsubsection}{\numberline {4.0.2.1}Methods: DR, Fingerprinting, MM, AoA, ToA, TDoA, RToF, Filters}{13}{subsubsection.4.0.2.1}
-\contentsline {subsubsection}{\numberline {4.0.2.2}Technologies: WLAN, BT, RFID, Ultrasound, FM}{14}{subsubsection.4.0.2.2}
-\contentsline {subsubsection}{\numberline {4.0.2.3}Datamodels for Indoor Localization}{14}{subsubsection.4.0.2.3}
-\contentsline {subsection}{\numberline {4.0.3}Indoor-/Outdoor Transition Solutions}{14}{subsection.4.0.3}
-\contentsline {subsection}{\numberline {4.0.4}Assessment and Conclusion}{15}{subsection.4.0.4}
-\contentsline {chapter}{\numberline {5}System Design und Implementation}{16}{chapter.5}
-\contentsline {subsection}{\numberline {5.0.1}Objective and Requirements}{16}{subsection.5.0.1}
-\contentsline {subsection}{\numberline {5.0.2}System Design Decisions}{16}{subsection.5.0.2}
-\contentsline {subsubsection}{\numberline {5.0.2.1}Technologies and Methods}{16}{subsubsection.5.0.2.1}
-\contentsline {subsubsection}{\numberline {5.0.2.2}Datamodel}{16}{subsubsection.5.0.2.2}
-\contentsline {subsubsection}{\numberline {5.0.2.3}IO and OI Transition}{16}{subsubsection.5.0.2.3}
-\contentsline {subsubsection}{\numberline {5.0.2.4}Software}{16}{subsubsection.5.0.2.4}
-\contentsline {subsection}{\numberline {5.0.3}Implementation}{16}{subsection.5.0.3}
-\contentsline {subsubsection}{\numberline {5.0.3.1}Programm Logic}{16}{subsubsection.5.0.3.1}
-\contentsline {subsubsection}{\numberline {5.0.3.2}Appearance}{16}{subsubsection.5.0.3.2}
-\contentsline {chapter}{\numberline {6}Evaluation}{17}{chapter.6}
-\contentsline {subsection}{\numberline {6.0.1}Positioning and Navigation Results}{17}{subsection.6.0.1}
-\contentsline {subsection}{\numberline {6.0.2}Maybe: Users Experience}{17}{subsection.6.0.2}
-\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{18}{chapter.7}
-\contentsline {chapter}{Anhang}{19}{chapter*.11}
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{20}{chapter*.12}
+\contentsline {chapter}{\numberline {3}Related Work}{7}{chapter.3}
+\contentsline {chapter}{\numberline {4}Technical Background/Technology Assessment}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}Positioning Methods}{9}{section.4.1}
+\contentsline {subsubsection}{\numberline {4.1.0.1}Angulation - Angle-Based}{11}{subsubsection.4.1.0.1}
+\contentsline {subsubsection}{\numberline {4.1.0.2}Lateration - Time-Based}{12}{subsubsection.4.1.0.2}
+\contentsline {subsubsection}{\numberline {4.1.0.3}Signal Property-Based - \ac {rssi}}{14}{subsubsection.4.1.0.3}
+\contentsline {section}{\numberline {4.2}Outdoor Positioning}{18}{section.4.2}
+\contentsline {section}{\numberline {4.3}Indoor Positioning}{21}{section.4.3}
+\contentsline {section}{\numberline {4.4}Datamodels for Indoor Localization}{23}{section.4.4}
+\contentsline {section}{\numberline {4.5}Indoor-/Outdoor Transition Solutions}{23}{section.4.5}
+\contentsline {section}{\numberline {4.6}Assessment and Conclusion}{23}{section.4.6}
+\contentsline {chapter}{\numberline {5}System Design und Implementation}{26}{chapter.5}
+\contentsline {subsection}{\numberline {5.0.1}Objective and Requirements}{26}{subsection.5.0.1}
+\contentsline {subsection}{\numberline {5.0.2}System Design Decisions}{26}{subsection.5.0.2}
+\contentsline {subsubsection}{\numberline {5.0.2.1}Technologies and Methods}{26}{subsubsection.5.0.2.1}
+\contentsline {subsubsection}{\numberline {5.0.2.2}Datamodel}{26}{subsubsection.5.0.2.2}
+\contentsline {subsubsection}{\numberline {5.0.2.3}IO and OI Transition}{26}{subsubsection.5.0.2.3}
+\contentsline {subsubsection}{\numberline {5.0.2.4}Software}{26}{subsubsection.5.0.2.4}
+\contentsline {subsection}{\numberline {5.0.3}Implementation}{26}{subsection.5.0.3}
+\contentsline {subsubsection}{\numberline {5.0.3.1}Programm Logic}{26}{subsubsection.5.0.3.1}
+\contentsline {subsubsection}{\numberline {5.0.3.2}Appearance}{26}{subsubsection.5.0.3.2}
+\contentsline {chapter}{\numberline {6}Evaluation}{27}{chapter.6}
+\contentsline {subsection}{\numberline {6.0.1}Positioning and Navigation Results}{27}{subsection.6.0.1}
+\contentsline {subsection}{\numberline {6.0.2}Maybe: Users Experience}{27}{subsection.6.0.2}
+\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{28}{chapter.7}
+\contentsline {chapter}{Anhang}{29}{chapter*.65}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{30}{chapter*.66}
