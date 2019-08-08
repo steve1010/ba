@@ -10,25 +10,19 @@
 \contentsline {section}{\numberline {4.1}Positioning Methods}{9}{section.4.1}
 \contentsline {subsubsection}{\numberline {4.1.0.1}Angulation - Angle-Based}{11}{subsubsection.4.1.0.1}
 \contentsline {subsubsection}{\numberline {4.1.0.2}Lateration - Time-Based}{12}{subsubsection.4.1.0.2}
-\contentsline {subsubsection}{\numberline {4.1.0.3}Signal Property-Based - \ac {rssi}}{14}{subsubsection.4.1.0.3}
+\contentsline {subsubsection}{\numberline {4.1.0.3}Signal Property-Based - \ac {rssi}}{13}{subsubsection.4.1.0.3}
 \contentsline {section}{\numberline {4.2}Outdoor Positioning}{18}{section.4.2}
-\contentsline {section}{\numberline {4.3}Indoor Positioning}{21}{section.4.3}
-\contentsline {section}{\numberline {4.4}Datamodels for Indoor Localization}{23}{section.4.4}
+\contentsline {section}{\numberline {4.3}Indoor Positioning}{20}{section.4.3}
+\contentsline {section}{\numberline {4.4}Datamodels for Indoor Localization}{22}{section.4.4}
 \contentsline {section}{\numberline {4.5}Indoor-/Outdoor Transition Solutions}{23}{section.4.5}
-\contentsline {section}{\numberline {4.6}Assessment and Conclusion}{23}{section.4.6}
-\contentsline {chapter}{\numberline {5}System Design und Implementation}{26}{chapter.5}
-\contentsline {subsection}{\numberline {5.0.1}Objective and Requirements}{26}{subsection.5.0.1}
-\contentsline {subsection}{\numberline {5.0.2}System Design Decisions}{26}{subsection.5.0.2}
-\contentsline {subsubsection}{\numberline {5.0.2.1}Technologies and Methods}{26}{subsubsection.5.0.2.1}
-\contentsline {subsubsection}{\numberline {5.0.2.2}Datamodel}{26}{subsubsection.5.0.2.2}
-\contentsline {subsubsection}{\numberline {5.0.2.3}IO and OI Transition}{26}{subsubsection.5.0.2.3}
-\contentsline {subsubsection}{\numberline {5.0.2.4}Software}{26}{subsubsection.5.0.2.4}
-\contentsline {subsection}{\numberline {5.0.3}Implementation}{26}{subsection.5.0.3}
-\contentsline {subsubsection}{\numberline {5.0.3.1}Programm Logic}{26}{subsubsection.5.0.3.1}
-\contentsline {subsubsection}{\numberline {5.0.3.2}Appearance}{26}{subsubsection.5.0.3.2}
-\contentsline {chapter}{\numberline {6}Evaluation}{27}{chapter.6}
-\contentsline {subsection}{\numberline {6.0.1}Positioning and Navigation Results}{27}{subsection.6.0.1}
-\contentsline {subsection}{\numberline {6.0.2}Maybe: Users Experience}{27}{subsection.6.0.2}
-\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{28}{chapter.7}
-\contentsline {chapter}{Anhang}{29}{chapter*.65}
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{30}{chapter*.66}
+\contentsline {section}{\numberline {4.6}Assessment and Conclusion}{24}{section.4.6}
+\contentsline {chapter}{\numberline {5}System Design und Implementation}{28}{chapter.5}
+\contentsline {section}{\numberline {5.1}Objective and Requirements}{28}{section.5.1}
+\contentsline {section}{\numberline {5.2}System Design Decisions}{28}{section.5.2}
+\contentsline {section}{\numberline {5.3}Implementation}{28}{section.5.3}
+\contentsline {chapter}{\numberline {6}Evaluation}{29}{chapter.6}
+\contentsline {subsection}{\numberline {6.0.1}Positioning and Navigation Results}{29}{subsection.6.0.1}
+\contentsline {subsection}{\numberline {6.0.2}Maybe: Users Experience}{29}{subsection.6.0.2}
+\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{30}{chapter.7}
+\contentsline {chapter}{Anhang}{31}{chapter*.63}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{32}{chapter*.64}

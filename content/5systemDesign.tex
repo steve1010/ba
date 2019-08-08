@@ -1,13 +1,20 @@
 \chapter{System Design und Implementation}
-\subsection{Objective and Requirements} % Zielsetzung und Anforderungen an den Prototyp 
+This chapter aims at the documentation of objectives and requirements for the navigation prototype. System design decisions, such as the choice of technologies, methods, the datamodel and transition strategy, but also decisions wrt. the implementation, e.g. the used software libraries, system architecture and appearance.
 
-		% Eingänge, Räume, Etagen, Aufzüge identifizieren und zu ihnen navigieren
-\subsection{System Design Decisions}
-\subsubsection{Technologies and Methods}
-\subsubsection{Datamodel}
-indoor gml als vorlage..
-\subsubsection{IO and OI Transition}
-\subsubsection{Software}
-\subsection{Implementation} 
-\subsubsection{Programm Logic} % used frameworks, languages and libraries, algorithm implementation (code)
-\subsubsection{Appearance} % GUI Elements
+\section{Objective and Requirements} 
+% Zielsetzung und Anforderungen an den Prototyp 
+The navigation prototype shall navigate persons from locations outdoors to a predefined indoor location. It shall also provide the possibility to add new locations (cellspaces) to the model or reconfigure existing structures. The prototype shall as simple as possible; it shall use android smartphones and existing infrastructure. In the case of the test area, the university campus at the Erba, there are Bluetooth beacons at the entrance and WLAN APs all over the building.
+
+% Eingänge, Räume, Etagen, Aufzüge identifizieren und zu ihnen navigieren
+\section{System Design Decisions}
+\subsection*{Technologies and Methods}
+%GPS outdoors, WLAN/BT indoors
+
+\subsection*{Datamodel}
+% indoor gml als vorlage..
+% Cellspaces can contain others and different attributes shall be configurable.
+\subsection*{IO and OI Transition}
+\subsection*{Software}
+\section{Implementation} 
+\subsection*{Programm Logic} % used frameworks, languages and libraries, algorithm implementation (code)
+\subsection*{Appearance} % GUI Elements

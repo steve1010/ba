@@ -7,17 +7,17 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces An overview to indoor localization methods \cite {recentAdvances}\relax }}{10}{figure.caption.11}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces The proximity detection method \cite {wirelessILSystemsAndTechniques}\relax }}{10}{figure.caption.16}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces The angle-based method\cite {recentAdvances}\relax }}{11}{figure.caption.20}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces The RToF/TOA method \cite {recentAdvances}\relax }}{12}{figure.caption.21}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces The observed time difference of arrival method\cite {uwbILSpic}\relax }}{13}{figure.caption.23}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces The inverse square law used in signal property-based methods\cite {imgSrc}\relax }}{14}{figure.caption.26}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Signal property-based lateration \cite {recentAdvances}\relax }}{14}{figure.caption.27}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces An exemplary DR measurement result with three steps detected \cite {drSystem}\relax }}{15}{figure.caption.29}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces A typical map matching navigation result \cite {mmSystem}\relax }}{16}{figure.caption.32}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces The location fingerprinting process \cite {recentAdvances}\relax }}{17}{figure.caption.34}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces The processes involved in particle filtering \cite {particleFilterImg}\relax }}{18}{figure.caption.36}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces How WiMAX works \cite {wimax}\relax }}{20}{figure.caption.40}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Evaluation of positioning methods wrt. accuracy, coverage, multipath affection and cost \cite {recentAdvances}\relax }}{24}{figure.caption.59}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Evaluation of positioning technologies wrt. accuracy, coverage, power consumption and cost \cite {recentAdvances}\relax }}{24}{figure.caption.60}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The observed time difference of arrival method \cite {uwbILSpic}\relax }}{13}{figure.caption.22}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces The inverse square law used in signal property-based methods\cite {imgSrc}\relax }}{14}{figure.caption.25}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces An exemplary DR measurement result with three steps detected \cite {drSystem}\relax }}{15}{figure.caption.27}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces A typical map matching navigation result \cite {mmSystem}\relax }}{16}{figure.caption.29}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces The location fingerprinting process \cite {recentAdvances}\relax }}{16}{figure.caption.32}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces The processes involved in particle filtering \cite {particleFilterImg}\relax }}{17}{figure.caption.34}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces How WiMAX works \cite {wimax}\relax }}{20}{figure.caption.38}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Comparison of (a) SNR and (b) GPS accuracy in the indoor places with those in outdoor environment. \cite {seamlessGPShandoverStrategy}\relax }}{24}{figure.caption.48}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Evaluation of positioning methods wrt. accuracy, coverage, multipath affection and cost \cite {recentAdvances}\relax }}{25}{figure.caption.50}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Evaluation of positioning technologies wrt. accuracy, coverage, power consumption and cost \cite {recentAdvances}\relax }}{26}{figure.caption.53}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Evaluation of symbolic location models\cite {onLocationModels}\relax }}{27}{figure.caption.55}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

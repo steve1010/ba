@@ -1,9 +1,9 @@
 \chapter{Technical Background/Technology Assessment}
 
 This section focuses on the technical background and theoretical foundations for I/O positioning systems. Advantages and disadvantages of single solutions are worked out to build a knowledge basis for the implementation of an I/O navigation prototype.
-This prototype shall be able to navigate users at an an address arbitrary location outdoors to a predefined location indoors, in this case a room at the university campus.
+This prototype shall be able to navigate users at arbitrary locations outdoors to a predefined location indoors, in this case a room at the university campus. The transition between indoor and outdoor positioning shall be as smooth and user-friendly as possible.
 
-To fulfill this task the system needs several components, such as at least one indoor and one outdoor positioning technology, localization methods, an underlying data model and a transition strategy for positioning technologies.
+To fulfil this task, the system needs several components such as at least one indoor and one outdoor positioning technology, localization methods, an underlying data model and a transition strategy for positioning technologies.
 Representatives of those components are presented in the following and then evaluated at the end of this chapter wrt. their applicability. As this work focuses on the transition between outdoor and indoor navigation, for the prototype only one indoor and one outdoor technology is used. A combination of several technologies and methods would improve quality of positioning services \cite{challengesLBS}.
 Further system design considerations and decisions are part of the next chapter. 
 
@@ -16,7 +16,7 @@ Although GNSSs which uniquely make use of the \ac{toa} method, are the most prom
 There exist several methods for position determination, such as \textit{Proximity Detection}, \textit{Dead-Reckoning}, the time-based methods \textit{\ac{toa}} and \textit{\ac{rtof}}, also refered to as \textit{Trialateration}, \textit{Fingerprinting}, \textit{Map Matching} and \textit{Particle Filters}. 
 Their applicability depends on environmental properties and the required positioning accuracy.
 
-\textit{Hint: The content of the following section \emph{4.1 Positioning Methods} is extracted in reduced form from the author's last paper 'Indoor Localization - A Comparison of Different Methods and Approaches'}
+\textit{Hint: The content of the following section \emph{4.1 Positioning Methods} is extracted in reduced form from the author's last paper 'Indoor Localization - A Comparison of Different Methods and Approaches' \cite{posMethods} }
 
 Like depicted in Figure \ref{img:methodsOverview}, there are three classes of methods: proximity detection, triangulation and scene analysis. 
 
@@ -31,7 +31,7 @@ Proximity detection methods estimate a target's current position based on proxim
 
 The proximity detection method is a very simple localization method where multiple detection sensors (like routers, \ac{ir} or \ac{rfid}) are used to mark proximity areas. 
 
-On detection, an object can be estimated to positioned in the detector's area. Whenever more than one sensor detects the same object, it is expected to be in the area of that sensor receiving the strongest signal. This process is also called 'forwarding'.
+On detection, an object can be estimated to positioned in the detector's area. Whenever more than one sensor detects the same object, it is expected to be in the area of that sensor receiving the strongest signal. This process is also called \textit{forwarding}.
 An illustration of this method can be seen in Figure \ref{img:proximityDetection}.
 \image{5cm}{grafiken/semImg/proximityDetection.png}{The proximity detection method \cite{wirelessILSystemsAndTechniques}}{img:proximityDetection}
 
@@ -66,23 +66,23 @@ There are four approaches:
 	\[ d\textsubscript{i} =  t\textsubscript{i}  *  c \text{  .}\] 
 	Observing the equation, it can be seen why precise synchronization is an absolute requirement for this method: due to constant c being that high, even small discrepancies in time can result in a completely different distance.\\
 	Due to time-based signals are not directed in any way, an object must be located anywhere on a circle around the receiver station, with a radius of the computed distance. The intersection of those circles is then the most likeliest position.
-	The TOA method using three base stations is shown in Figure \ref{img:toa}.
-	\image{5cm}{grafiken/semImg/RToFandTOA.PNG}{The RToF/TOA method \cite{recentAdvances}}{img:toa}
+	%The TOA method using three base stations is shown in Figure \ref{img:toa}.
+%	\image{5cm}{grafiken/semImg/RToFandTOA.PNG}{The RToF/TOA method \cite{recentAdvances}}{img:toa}
 	
 	\item \ac{otdoa}:\\
 	This time-based method, also called multilateration, infers positions by using relative arrival times captured by at three time-synchronized base stations with known location. A signal's OTDOA at the base stations can also be converted to a distance: \[ D = OTDOA * c\]
 	For example, regarding two base stations BS1 and BS2, an OTDOA of +3.3 $\mu$s would indicate, that BS1 is 1000m closer than BS2. 
-	There are infinitely many points where the transmitter is exactly D entities closer to the one base station than to another. Combining those points results in a hyperbolic shape. The intersection of multiple hyperbolic curves then represents the most likeliest position of the transmitter.
-	The OTDOA method is illustrated in Figure \ref{img:otdoa}, on which the bespoke hyperbolic curves are depicted in green.
-	\image{7cm}{grafiken/semImg/otdoa.PNG}{The observed time difference of arrival method\cite{uwbILSpic}}{img:otdoa}
-	
-	\item \ac{tdoa}:\\
-	\ac{tdoa} makes use of at least two different technologies, or rather their different propagation times, and relative arrival times. In many systems, electromagnetic and ultrasound waves are used, such as in \cite{otoaUltrasound}. A mobile client simultanously emmits signals using both technologies. At receiver side, the (relative) difference of arrival times and the actual phase difference are used to compute the distance. \cite{mitILSystem}
-	% TODO: IL-methods-TDoA: here could be more content 
+	There are infinitely many points where the transmitter is exactly D entities closer to the one base station than to another. Combining those points results in a hyperbolic shape. The intersection of multiple hyperbolic curves then represents the most likeliest position of the transmitter.	
 	
 	\item \ac{rtof}:\\
 	Similary to ToA, the RToF method uses absolute time to localize objects. The only difference is that the RtoF method uses rount trip time, i.e. the time required to send a message from mobile transmitter to receiver station and back to transmitter, instead of only the time required to send and receive once. 
-	In case interferences occur only in one of the two transmissions, averaging can be applied, such that this method can supply a more accurate positioning result than ToA. Obviously, the above kinds of lateration could also be combined with RtoF method in order to improve positioning accuracy. Also, positioning calculations could then be done on client-side. The method is depicted in Figure \ref{img:toa}.\\
+	In case interferences occur only in one of the two transmissions, averaging can be applied, such that this method can supply a more accurate positioning result than ToA. Obviously, the above kinds of lateration could also be combined with RtoF method in order to improve positioning accuracy. Also, positioning calculations could then be done on client-side.
+	
+	The lateration method is illustrated in Figure \ref{img:otdoa}, on which the bespoke hyperbolic curves are depicted in green.
+	\image{7cm}{grafiken/semImg/otdoa.PNG}{The observed time difference of arrival method \cite{uwbILSpic}}{img:otdoa}
+	
+	\item \ac{tdoa}:\\
+	\ac{tdoa} makes use of at least two different technologies, or rather their different propagation times, and relative arrival times. In many systems, electromagnetic and ultrasound waves are used, such as in \cite{otoaUltrasound}. A mobile client simultanously emmits signals using both technologies. At receiver side, the (relative) difference of arrival times and the actual phase difference are used to compute the distance. \cite{mitILSystem}
 \end{itemize}
 
 \subsubsection{Signal Property-Based - \ac{rssi}}
@@ -95,9 +95,9 @@ Assuming an isotropic source (like APs or routers), the intensity of the emitted
 \image{6cm}{grafiken/semImg/rssInverseSquare.PNG}{The inverse square law used in signal property-based methods\cite{imgSrc}}{img:rssInverseSquare}
 
 As in other trilateration techniques, the single distances from a mobile client to the base stations form circles around them, whose intersection finally represents the positioning result.
-The signal property-based method with just a single base station is depicted in Figure \ref{img:rssMethod}.
+%The signal property-based method with just a single base station is depicted in Figure \ref{img:rssMethod}.
 
-\image{5cm}{grafiken/semImg/rssMethod.PNG}{Signal property-based lateration \cite{recentAdvances}}{img:rssMethod}
+%\image{5cm}{grafiken/semImg/rssMethod.PNG}{Signal property-based lateration \cite{recentAdvances}}{img:rssMethod}
 
 %A related but more sophisticated approach is the so-called path loss model which is described by the following equation:
 %\[RSSI = -10nlog_{10}(d)+C\]
@@ -127,7 +127,7 @@ Last step in the process is step length estimation. Besides some dynamic methods
 
 The Map Matching method makes use of a building's roadmap and (mostly noisy) localization samples, such that "building information provide a logical threshold to bound the solution into a certain region"\cite{mmSystem}. Thus, a system is able to return valid positions somewhere on the floor plan, even if the real measurement values diverge.
 
-As nowadays most big buildings are equiped with many rounters or \ac{ap}s, map matching positioning samples mostly origin from WLAN signal strength values.
+Map matching positioning samples mostly origin from WLAN signal strength values.
 The required electronic map can either be designed in a floor plan builder or generated automatically using crowd-sourced data samples. 
 
 There is a variety of applicable algorithms and data models such as graph- and link-based or room- and floor 3D-models. In the link-based approach, an ID and respective coordinates are assigned to each room. 
@@ -145,7 +145,7 @@ The basic idea in the training phase is to "collect features of the scene (finge
 In the tracking phase, a mobile client requests all base stations in its region to reply to its positioning query. The strengths of signals received by the client can then be compared with those in the database, resulting in the closest known position.
 
 % Example with explaination
-A mobile device could for example collect WLAN signal strengths from different \ac{ap}s at every point of interest in a building and safe them together with actual location in a database. During online phase, current RSSI measurements can be mapped to known locations.\linebreak
+A mobile device could for example collect WLAN signal strengths from different \ac{ap}s at every point of interest in a building and safe them together with actual location in a database. During online phase, current RSSI measurements can be mapped to known locations.\\
 The overall process is illustrated in Figure \ref{img:fingerprinting}.
 
 \image{8cm}{grafiken/semImg/fingerprinting.PNG}{The location fingerprinting process \cite{recentAdvances}}{img:fingerprinting}
@@ -160,7 +160,7 @@ The overall particle filtering process including subprocesses is depicted in Fig
 
 \image{9cm}{grafiken/semImg/particleFilters.PNG}{The processes involved in particle filtering \cite{particleFilterImg}}{img:particleFilter}
 
-
+\newpage
 
 
 \section{Outdoor Positioning}
@@ -309,79 +309,104 @@ The main drawback of Bluetooth-based positioning is the lengthy positioning proc
 
 \subsection*{RFID}
 Localization with the \ac{rfid} technology works with wearable tags which emit or reflect radio waves. Scanning devices are organized in a network, whereas a single device can cover an area of several meters. RFID readers can read emitted data from tags which are available in two variants, active or passive. The former are battery-driven transceivers and are mostly applied in combination with proximity detection due to range limitations. But there are also tags which can transmit signals over tens of meters \cite{surveyWirelessIPS}, such there is basically any positioning method applicable. 
-The RFID technology offers three different radio frequencies: low (125-134 kHz), high (13.56 MHz) and ultra-high frequency (860-960 MHz) and can thus successfully operate at non-line-of-sight environments \cite{wirelessILSystemsAndTechniques}.
+The RFID technology offers three different radio frequencies: low (125-134 kHz), high (13.56 MHz) and ultra-high frequency (860-960 MHz) and can thus (at lower frequencies) successfully operate at non-line-of-sight environments \cite{wirelessILSystemsAndTechniques}.
 
-Passive tags act as replacement for traditional barcode technology. They have no battery and thus only "reflect the RF signal transmitted to them from a reader and add information by modulating the reflected signal" \cite{surveyWirelessIPS}.
+Passive tags act as replacement for traditional bar-code technology. They have no battery and can thus only "reflect the RF signal transmitted to them from a reader and add information by modulating the reflected signal" \cite{surveyWirelessIPS}.
 
-The main drawback of the RFID technology is its limited range of low and high frequency, the need for a tag to be carried along and the required installation of receivers.
+The main drawback of the RFID technology is its limited range, the need for a tag to be carried along and the required installation of receivers.
 
 \subsection*{Ultrasound}
-Another positioning technology is Ultrasound
+Another positioning technology is Ultrasound, which is inspired by the orientation system of bats. It works with sound waves of frequencies higher than 16kHz which can not penetrate walls, i.e. positioning requires line-of-sight and obstacles can cause reflections.
+Among advanced approaches, a wearable tag is still required. Ultrasound tags periodically emit signals which can be received at multiple stations.
 
+Besides the remarkable positioning accuracy of several centimeters and a high sampling rate of 50 samples per second there is a dense network of sensors required and a single sensor can cover only a small area of approximately 1 m$^2$ \cite{surveyIPS}. The Active Bat positioning system, for example, which was invented by researchers at AT\&T Cambridge uses multilateration and 720 receivers fixed on the ceiling to cover an area of 1000 m$^2$. By that it is able to "determine the positions of up to 75 objects each second, accurate to around 3cm in three dimensions" \cite{activeBat}.
 
-
-
-
-
-
-
-
-
-
-
-
+% evtl noch collision of metals als interference src
 \section{Datamodels for Indoor Localization}
+The data model is an essential part of transitional navigation systems, as it combines properties of both indoor and outdoor positioning. For example, GNSSs can only provide geometric location information, i.e. altitude and values in \ac{wgs} format (longitude, latitude). In contrast to that, localization inside buildings is oriented towards possibly hierarchical, symbolic cellspaces, i.e. rooms, corridors and floors. 
+The model has also to consider navigation requirements such as distance, expected speed between locations, and the topological relations \textit{connected-to} and spatial containment.
 
-\subsection*{Set-based}
-	
-\subsection*{Hierarchical} 
-	
-\subsection*{Graph-based} 
-	
-\subsection*{Combined}
+There exist geometric and symbolic models.
+A geometric model focuses on the shape of locations using points and polygons. 
+Symbolic data models could be designed with set-based, hierarchical, graph-based or combined approaches. 
+
+% \subsection*{Set-based}
+In a \textit{set-based} model all symbolic locations are organized in a set. Special locations, such as all rooms in a floors, can be modelled as subsets.
+In this approach, only qualitative distances can be used and there is no possibility to model relations, so it is not very useful for navigation.
+
+% \subsection*{Hierarchical} 
+\textit{Hierarchical} approaches model buildings hierarchically in sets according to the components' spatial relation. For example, buildings contain sets of floors and floors contains a sets of rooms.
+There are still no real distances or connected-to relations included.
+
+% \subsection*{Graph-based} 
+\textit{Graph-based} models express connected-to relations between symbolic cellspaces with edges. They can also be weighted in order to express distances between locations. Based on the number of hops and their weight, a distance function and also range queries are applicable \cite{onLocationModels}.
+
+% \subsection*{Combined}
+\textit{Combining} different models improves capacity, for example adding range-based sets to the graph-based approach allows as well range queries as connected-to relations and calculation of distances.
+
+As indicated before, for the prototype a hybrid location model is required which can handle both gemetric and symbolic locations. There are two approaches: the subspaces or the partial subspaces approach. Whereas the former assignes a geometric location to \textit{every} symbolic location, the later does so only for some locations, for example only for a building. The subspaces approach makes it possible to integrate symbolic cellspaces into geometric maps, whereby also geometric range queries are applicable \cite{onLocationModels} (e.g. query for restaurants or libraries within a radius of n kilometers).
 
 \section{Indoor-/Outdoor Transition Solutions}
-\subsection*{Use GPS or WLAN until signal loss}
-	
-\subsection*{prefer WLAN over GPS}	
-\subsection*{prefer GPS until signal loss (of 5s)}
-	
-\subsection*{vision/ user interaction-based approaches}
-	
-\subsection*{use SNR and GPS accuracy, dependent on going indoors or outdoors}
+
+There are various strategies for switching between positioning technologies.
+For reasons of simplicity, in this section GPS is assumed to be used for outdoor navigation and WLAN indoors. Of course the algorithms could also be applied to other techologies.
+
+%\subsection*{vision/ user interaction-based approaches}
+The most obvious and less technical strategy is to let the user decide. As pedestrians who navigate with smartphones through the city need to look at their smartphone anyway, the UI could also have interactive elements for I/O transition. For example, a hit on a respective button in the user interface (UI) could trigger a switching of technologies in the system.
+
+\cite{streamspin} presents various strategies for I/O transitions.\\
+% prefer GPS over WLAN
+Two possible strategies are to always \textit{prefer GPS over WLAN} or vice versa.
+The additional technology is only used if the main positioning technology detects no signal within a defined time interval (e.g. 5 seconds).
+In case GPS is prefered, this leads to good outdoor positioning accuracy and an user's position could be detected successfully in the presence of windows. However, GPS positioning indoors is either not very good or not possible. It is thus more likely that a received GPS signal indoors interrupts reliable WLAN positioning. The other option, \textit{always prefer WLAN over GPS}, leads to good indoor accuracy but I/O transitions could not or way too late be detected, as WLAN signals can be received outdoors even tens of meters away from the buildings.\\
+% Use GPS or WLAN until signal loss
+Another strategy, \textit{prefer GPS or WLAN until signal loss}, aims to solve the problem of bad GPS signals indoors or bad WLAN signals outdoors. Although the transition between outdoors and indoors could be successfully detected due to GPS signal loss, going back outdoors would cause the same detection delay than the prefer-WLAN approach, which makes this strategy also not applicable for seamless I/O navigation.\\
+According to \cite{streamspin}, the most promising strategy is to \textit{prefer GPS upon continuous readings}, which aims at solving the problem of bad WLAN positioning being further used outdoors. In this solution GPS is used when a signal is received every second for the last 5 seconds, if not, WLAN positioning is switched on.
+
+%\subsection*{use SNR and GPS accuracy, dependent on going indoors or outdoors}
+\cite{seamlessGPShandoverStrategy} propose a more advanced and very precise handover strategy. They found that while the "average SNR dropped from 30 dB to lower than 20 dB [..](,) satellites at an elevation of 30–90 degrees showed a dip in SNR changes [..] (while others) showed no noticeable SNR drop" \cite[p. 6]{seamlessGPShandoverStrategy}. That means the use of an average value of all received satellites could impair transition detection. The authors thus recommend to use only satellites of high altitude for outdoor-indoor transitions.
+Furthermore, the authors found that SNR values are not adequate for handover from indoor to outdoor, as the SNR indoors in presence of windows or glass roofs is comparable to the SNR outdoors. In fact, their experiments show that GPS accuracy is a better indicator for indoor-outdoor transition: accuracy indoors varies from 20-50m, even in presence of windows or glass roofs, whereas accuracy outdoors is around 10m.
+The comparison of SNR and GPS accuracy in indoor places with outdoors is shown in Figure \ref{img:snrComp}.
+\image{16cm}{grafiken//snrComparison.PNG}{Comparison of (a) SNR and (b) GPS accuracy in the indoor places with those in outdoor environment. \cite{seamlessGPShandoverStrategy}}{img:snrComp}
 
 \section{Assessment and Conclusion}
+
+This chapter presented various methods, technologies, data models and transition solutions. Recent works \tripplecite{\cite{wirelessILSystemsAndTechniques}}{\cite{recentAdvances}}{\cite{seamlessGPShandoverStrategy}} already evaluated the bespoke components. The results are rehashed in the following.
+
+
 \subsection*{Methods}
+% proximity, triangulation, lateration (tdoa rtof ordoa, toa), rssi, dr, mm, fingerprinting, particle filters.
 
-\cite{wirelessILSystemsAndTechniques} methods comparison
+% \cite{wirelessILSystemsAndTechniques} methods comparison
+\cite{recentAdvances} evaluated the bespoke methods under the parameters accuracy, coverage, line of sight (LOS) requirement, multipath affection and cost. The evaluation table is shown in Figure \ref{img:methodsEval}.
 
-RFID is, compared to BT more applicable for real-time apps.
-\cite{recentAdvances}: evaluation tables:
 \image{12cm}{grafiken//semImg//methodsComparisonOriginal.PNG}{Evaluation of positioning methods wrt. accuracy, coverage, multipath affection and cost \cite{recentAdvances}}{img:methodsEval}
 
-\image{12cm}{grafiken//technologiesComparisonCut.PNG}{Evaluation of positioning technologies wrt. accuracy, coverage, power consumption and cost \cite{recentAdvances}}{img:techEval}
-------------------------------------------
+Angle-based and distance-based methods require LOS, which is typically not given inside buildings. However, in lofts and big halls those methods are applicable but interconnected with high costs.\\
 % From fingerprinting: 
+An advantage of fingerprinting is its low cost: it does "not require specialized hardware in either the mobile device or the receiving end nor is no time synchronization necessary between the stations." \cite{recentAdvances} On the other hand, the method has its drawbacks in the heavy calibration process: "In order to eliminate the deviation of attenuation in the signal, RSS values are to be averaged over a certain time interval up to several minutes at each fingerprint location" \cite{recentAdvances}. Infrastructural changes, for instance (re-) moving of objects and \ac{ap}s entail modifications in the RSSI database, such that the calibration process must be repeated periodically to keep the system up-to-date.\\
+Advanced methods, such as particle filters, Kalman filters and neural networks are complex to setup and aim at improving accuracy more and more, which is basicall not required for simple navigation tasks.
+In contrast to them, Dead-Reckoning can provide coverage of a large building even with few sensors. In case cost or simplicity is required this method fits best.
 
-An advantage of this method is its low cost: it does "not require specialized hardware in either the mobile device or the receiving end nor is no time synchronization necessary between the stations." \cite{recentAdvances} On the other hand, the method has its drawbacks in the heavy calibration process: "In order to eliminate the deviation of attenuation in the	signal, the RSS values are to be averaged over a certain time interval up to several minutes at each fingerprint location." \cite{recentAdvances} Infrastructural changes, for instance  (re-) moving of objects and \ac{ap}s entail modifications in the RSSI database, such that the calibration process must be repeated periodically to keep the system up-to-date.
-
-
-% From MM:
-
-Obviously, combinations of those algorithms improve positioning accuracy, such that they often occur at least pairwise. \cite{mmSystem}, for example, uses a combination of geometrical, topological and probabilistic algorithms to ensure an optimal result. The authors also refined the geometrical algorithm such that the shift between positioning estimate and projection is applied to the next measurement, which leads to a more accurate localization.
-
-% 
 \subsection*{Outdoor positioning}
-		%Saltelliten, da z.b. sendemasten zu kleine gebiete abdecken können und außerdem in tälern (schattenseite) nicht positionieren
-	A network of satellites is the only way to cover global range, as for example networked base stations would require partially unfeasible installation of transceivers anywhere on Earth (e.g. in oceans, mountains, dells and gorges etc.) to provide equal coverage.
-	
+% Saltelliten, da z.b. sendemasten zu kleine gebiete abdecken können und außerdem in tälern (schattenseite) nicht positionieren
+For outdoor positioning, a network of satellites is the only way to cover global range, as for example networked base stations would require partially infeasible installation of transceivers anywhere on earth (e.g. in oceans, mountains, dells and gorges etc.) to provide equal coverage. Local I/O navigation systems of limited range could also be implemented with other solutions such as WiMAX or cellular networks
 
 \subsection*{Indoor positioning}
-	
-\subsection*{Datamodel}
-	
-\subsection*{Transition solution}
- combination of interaction and measurement
+The choice of appropriate indoor positioning technology/technologies depend/s on the project's requirements, existing digital infrastructure and resources. If high accuracy is required, Ultrasound positioning might be the right choice. If costs are to be safed, existing infrastructure (WLAN) and smartphones or cheap RFID tags can be used. Compared to BT, RFID positioning is faster and thus more applicable for real-time applications. \cite{recentAdvances} evaluated the bespoke indoor postioning technologies wrt. the parameters accracy, coverage, power consumption and cost. The table is shown in Figure \ref{img:techEval}.
 
+\image{12cm}{grafiken//technologiesComparisonCut.PNG}{Evaluation of positioning technologies wrt. accuracy, coverage, power consumption and cost \cite{recentAdvances}}{img:techEval}
+
+\subsection*{Datamodel}
+For an I/O navigation system obviously a hybrid (geometric and symbolic) model is required. An evaluation of symbolic models can be found in Figure \ref{img:modelsEval}. Graph-based or combined symbolic models are the most promising for navigation due to the support of distance and connected-to relation.	The implementation of the final data model is presented in the following chapter.
+
+\image{10cm}{grafiken//propertiesLocationModels.PNG}{Evaluation of symbolic location models\cite{onLocationModels}}{img:modelsEval}
+
+\subsection*{Transition solution}
+
+The most reliable transition solution is to ask the users, as they can basically not fail. 
+As already mentioned in the respective section, the only applicable technical strategies are \textit{prefer GPS upon continuous readings} or \cite{seamlessGPShandoverStrategy}'s approach with SNR drop of satellites at elevation of 30-90 degrees for outdoor/indoor transition and significant GPS accuracy rise for indoor/outdoor transition.
+
+Also a combination of different approaches is conceivable, e.g. a navigation system could ask the user whether the detected transition is valid.
 
 % END BACKGROUND % 
